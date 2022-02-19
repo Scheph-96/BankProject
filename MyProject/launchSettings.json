@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ProjectBank": {
+      "commandName": "Project",
+      "remoteDebugEnabled": false
+    }
+  }
+}
