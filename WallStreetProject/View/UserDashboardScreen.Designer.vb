@@ -29,11 +29,9 @@ Partial Class UserDashboardScreen
         Me.LogoutPic = New System.Windows.Forms.PictureBox()
         Me.UserFirstName = New System.Windows.Forms.Label()
         Me.UserLastName = New System.Windows.Forms.Label()
-        Me.ProfilePicBox = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.LogoutPic, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProfilePicBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -53,7 +51,6 @@ Partial Class UserDashboardScreen
         Me.Panel2.Controls.Add(Me.LogoutPic)
         Me.Panel2.Controls.Add(Me.UserFirstName)
         Me.Panel2.Controls.Add(Me.UserLastName)
-        Me.Panel2.Controls.Add(Me.ProfilePicBox)
         Me.Panel2.Location = New System.Drawing.Point(13, 13)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(758, 415)
@@ -95,7 +92,7 @@ Partial Class UserDashboardScreen
         Me.UserFirstName.AutoSize = True
         Me.UserFirstName.BackColor = System.Drawing.Color.Transparent
         Me.UserFirstName.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.UserFirstName.Location = New System.Drawing.Point(57, 27)
+        Me.UserFirstName.Location = New System.Drawing.Point(0, 22)
         Me.UserFirstName.Margin = New System.Windows.Forms.Padding(0)
         Me.UserFirstName.Name = "UserFirstName"
         Me.UserFirstName.Size = New System.Drawing.Size(74, 18)
@@ -107,22 +104,12 @@ Partial Class UserDashboardScreen
         Me.UserLastName.AutoSize = True
         Me.UserLastName.BackColor = System.Drawing.Color.Transparent
         Me.UserLastName.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.UserLastName.Location = New System.Drawing.Point(57, 5)
+        Me.UserLastName.Location = New System.Drawing.Point(0, 0)
         Me.UserLastName.Margin = New System.Windows.Forms.Padding(0)
         Me.UserLastName.Name = "UserLastName"
         Me.UserLastName.Size = New System.Drawing.Size(71, 18)
         Me.UserLastName.TabIndex = 2
         Me.UserLastName.Text = "lastname"
-        '
-        'ProfilePicBox
-        '
-        Me.ProfilePicBox.Location = New System.Drawing.Point(0, 0)
-        Me.ProfilePicBox.Margin = New System.Windows.Forms.Padding(0)
-        Me.ProfilePicBox.Name = "ProfilePicBox"
-        Me.ProfilePicBox.Size = New System.Drawing.Size(50, 50)
-        Me.ProfilePicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ProfilePicBox.TabIndex = 1
-        Me.ProfilePicBox.TabStop = False
         '
         'UserDashboardScreen
         '
@@ -135,14 +122,12 @@ Partial Class UserDashboardScreen
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.LogoutPic, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProfilePicBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents ProfilePicBox As PictureBox
     Friend WithEvents UserFirstName As Label
     Friend WithEvents UserLastName As Label
     Friend WithEvents LogoutPic As PictureBox

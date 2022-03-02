@@ -2,6 +2,6 @@
     Sub Main()
         Dim form1 As New Form1
 
-        form1.Show()
+        form1.ShowDialog()
     End Sub
 End Module

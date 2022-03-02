@@ -171,7 +171,7 @@ Partial Class TransferScreen
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.Location = New System.Drawing.Point(0, 46)
+        Me.Label2.Location = New System.Drawing.Point(0, 52)
         Me.Label2.Margin = New System.Windows.Forms.Padding(0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(171, 21)
@@ -183,7 +183,7 @@ Partial Class TransferScreen
         Me.WithdrawAmount.BackColor = System.Drawing.SystemColors.Control
         Me.WithdrawAmount.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.WithdrawAmount.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.WithdrawAmount.Location = New System.Drawing.Point(0, 71)
+        Me.WithdrawAmount.Location = New System.Drawing.Point(0, 77)
         Me.WithdrawAmount.Margin = New System.Windows.Forms.Padding(0)
         Me.WithdrawAmount.Name = "WithdrawAmount"
         Me.WithdrawAmount.Size = New System.Drawing.Size(336, 20)
@@ -192,7 +192,7 @@ Partial Class TransferScreen
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Black
-        Me.Panel2.Location = New System.Drawing.Point(0, 91)
+        Me.Panel2.Location = New System.Drawing.Point(0, 97)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(336, 1)

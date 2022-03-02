@@ -34,7 +34,15 @@ Partial Class UserDashboard
         Me.DepositPic = New System.Windows.Forms.PictureBox()
         Me.SoldeSection = New System.Windows.Forms.Panel()
         Me.SoldePic = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
         Me.MenuLayout.SuspendLayout()
         Me.TransferSection.SuspendLayout()
         CType(Me.TransferPic, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,6 +52,10 @@ Partial Class UserDashboard
         CType(Me.DepositPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SoldeSection.SuspendLayout()
         CType(Me.SoldePic, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel1.SuspendLayout()
+        Me.FlowLayoutPanel2.SuspendLayout()
+        Me.FlowLayoutPanel3.SuspendLayout()
+        Me.FlowLayoutPanel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuLayout
@@ -67,7 +79,8 @@ Partial Class UserDashboard
         'TransferSection
         '
         Me.TransferSection.BackColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(39, Byte), Integer))
-        Me.TransferSection.Controls.Add(Me.Label3)
+        Me.TransferSection.Controls.Add(Me.FlowLayoutPanel4)
+        Me.TransferSection.Controls.Add(Me.Label8)
         Me.TransferSection.Controls.Add(Me.TransferPic)
         Me.TransferSection.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TransferSection.Location = New System.Drawing.Point(384, 169)
@@ -83,16 +96,16 @@ Partial Class UserDashboard
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(257, 7)
+        Me.Label3.Location = New System.Drawing.Point(0, 0)
         Me.Label3.Margin = New System.Windows.Forms.Padding(0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(105, 26)
+        Me.Label3.Size = New System.Drawing.Size(130, 52)
         Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Transfert"
+        Me.Label3.Text = "Effectuer un transfert"
         '
         'TransferPic
         '
-        Me.TransferPic.Location = New System.Drawing.Point(10, 73)
+        Me.TransferPic.Location = New System.Drawing.Point(10, 36)
         Me.TransferPic.Name = "TransferPic"
         Me.TransferPic.Size = New System.Drawing.Size(72, 72)
         Me.TransferPic.TabIndex = 10
@@ -101,7 +114,8 @@ Partial Class UserDashboard
         'WithdrawalSection
         '
         Me.WithdrawalSection.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.WithdrawalSection.Controls.Add(Me.Label5)
+        Me.WithdrawalSection.Controls.Add(Me.FlowLayoutPanel3)
+        Me.WithdrawalSection.Controls.Add(Me.Label7)
         Me.WithdrawalSection.Controls.Add(Me.WithdrawalPic)
         Me.WithdrawalSection.Cursor = System.Windows.Forms.Cursors.Hand
         Me.WithdrawalSection.Location = New System.Drawing.Point(5, 169)
@@ -117,16 +131,16 @@ Partial Class UserDashboard
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(283, 7)
+        Me.Label5.Location = New System.Drawing.Point(0, 0)
         Me.Label5.Margin = New System.Windows.Forms.Padding(0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(79, 26)
+        Me.Label5.Size = New System.Drawing.Size(105, 52)
         Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Retrait"
+        Me.Label5.Text = "Effectuer un retrait"
         '
         'WithdrawalPic
         '
-        Me.WithdrawalPic.Location = New System.Drawing.Point(10, 73)
+        Me.WithdrawalPic.Location = New System.Drawing.Point(10, 36)
         Me.WithdrawalPic.Name = "WithdrawalPic"
         Me.WithdrawalPic.Size = New System.Drawing.Size(72, 72)
         Me.WithdrawalPic.TabIndex = 9
@@ -135,7 +149,8 @@ Partial Class UserDashboard
         'DepositSection
         '
         Me.DepositSection.BackColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.DepositSection.Controls.Add(Me.Label4)
+        Me.DepositSection.Controls.Add(Me.FlowLayoutPanel2)
+        Me.DepositSection.Controls.Add(Me.Label6)
         Me.DepositSection.Controls.Add(Me.DepositPic)
         Me.DepositSection.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DepositSection.Location = New System.Drawing.Point(384, 5)
@@ -151,16 +166,16 @@ Partial Class UserDashboard
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(289, 7)
+        Me.Label4.Location = New System.Drawing.Point(0, 0)
         Me.Label4.Margin = New System.Windows.Forms.Padding(0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(73, 26)
+        Me.Label4.Size = New System.Drawing.Size(105, 52)
         Me.Label4.TabIndex = 9
-        Me.Label4.Text = "Dépôt"
+        Me.Label4.Text = "Effectuer un dépôt"
         '
         'DepositPic
         '
-        Me.DepositPic.Location = New System.Drawing.Point(10, 72)
+        Me.DepositPic.Location = New System.Drawing.Point(10, 36)
         Me.DepositPic.Name = "DepositPic"
         Me.DepositPic.Size = New System.Drawing.Size(72, 72)
         Me.DepositPic.TabIndex = 8
@@ -169,8 +184,9 @@ Partial Class UserDashboard
         'SoldeSection
         '
         Me.SoldeSection.BackColor = System.Drawing.Color.GreenYellow
+        Me.SoldeSection.Controls.Add(Me.FlowLayoutPanel1)
+        Me.SoldeSection.Controls.Add(Me.Label1)
         Me.SoldeSection.Controls.Add(Me.SoldePic)
-        Me.SoldeSection.Controls.Add(Me.Label2)
         Me.SoldeSection.Cursor = System.Windows.Forms.Cursors.Hand
         Me.SoldeSection.Location = New System.Drawing.Point(5, 5)
         Me.SoldeSection.Margin = New System.Windows.Forms.Padding(5)
@@ -181,11 +197,32 @@ Partial Class UserDashboard
         '
         'SoldePic
         '
-        Me.SoldePic.Location = New System.Drawing.Point(10, 72)
+        Me.SoldePic.Location = New System.Drawing.Point(10, 36)
         Me.SoldePic.Name = "SoldePic"
         Me.SoldePic.Size = New System.Drawing.Size(72, 72)
         Me.SoldePic.TabIndex = 7
         Me.SoldePic.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(10, 121)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(70, 26)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "Solde"
+        '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.Controls.Add(Me.Label2)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(240, 10)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(119, 82)
+        Me.FlowLayoutPanel1.TabIndex = 9
         '
         'Label2
         '
@@ -193,12 +230,75 @@ Partial Class UserDashboard
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(292, 7)
+        Me.Label2.Location = New System.Drawing.Point(0, 0)
         Me.Label2.Margin = New System.Windows.Forms.Padding(0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(70, 26)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "Solde"
+        Me.Label2.Size = New System.Drawing.Size(117, 78)
+        Me.Label2.TabIndex = 10
+        Me.Label2.Text = "Consulter votre solde"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(10, 121)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(73, 26)
+        Me.Label6.TabIndex = 10
+        Me.Label6.Text = "Dépôt"
+        '
+        'FlowLayoutPanel2
+        '
+        Me.FlowLayoutPanel2.Controls.Add(Me.Label4)
+        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(251, 10)
+        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(108, 78)
+        Me.FlowLayoutPanel2.TabIndex = 11
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(7, 119)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(79, 26)
+        Me.Label7.TabIndex = 10
+        Me.Label7.Text = "Retrait"
+        '
+        'FlowLayoutPanel3
+        '
+        Me.FlowLayoutPanel3.Controls.Add(Me.Label5)
+        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(250, 7)
+        Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
+        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(107, 82)
+        Me.FlowLayoutPanel3.TabIndex = 11
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(10, 122)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(105, 26)
+        Me.Label8.TabIndex = 11
+        Me.Label8.Text = "Transfert"
+        '
+        'FlowLayoutPanel4
+        '
+        Me.FlowLayoutPanel4.Controls.Add(Me.Label3)
+        Me.FlowLayoutPanel4.Location = New System.Drawing.Point(224, 10)
+        Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
+        Me.FlowLayoutPanel4.Size = New System.Drawing.Size(135, 79)
+        Me.FlowLayoutPanel4.TabIndex = 12
         '
         'UserDashboard
         '
@@ -220,6 +320,14 @@ Partial Class UserDashboard
         Me.SoldeSection.ResumeLayout(False)
         Me.SoldeSection.PerformLayout()
         CType(Me.SoldePic, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.FlowLayoutPanel1.PerformLayout()
+        Me.FlowLayoutPanel2.ResumeLayout(False)
+        Me.FlowLayoutPanel2.PerformLayout()
+        Me.FlowLayoutPanel3.ResumeLayout(False)
+        Me.FlowLayoutPanel3.PerformLayout()
+        Me.FlowLayoutPanel4.ResumeLayout(False)
+        Me.FlowLayoutPanel4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -236,5 +344,13 @@ Partial Class UserDashboard
     Friend WithEvents DepositPic As PictureBox
     Friend WithEvents SoldeSection As Panel
     Friend WithEvents SoldePic As PictureBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents FlowLayoutPanel4 As FlowLayoutPanel
+    Friend WithEvents Label8 As Label
+    Friend WithEvents FlowLayoutPanel3 As FlowLayoutPanel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
+    Friend WithEvents Label6 As Label
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents Label2 As Label
 End Class

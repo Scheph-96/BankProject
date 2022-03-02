@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
-    <StartupObject>WallStreetProject.Form1</StartupObject>
+    <StartupObject>WallStreetProject.MyMain</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
     <ApplicationIcon>img\Bank_icon-icons.com_74914.ico</ApplicationIcon>
