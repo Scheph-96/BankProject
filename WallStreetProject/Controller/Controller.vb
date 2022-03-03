@@ -3,7 +3,7 @@ Imports System.IO
 Imports System.Text
 
 Public Class Controller
-    Private banque As New Bank()
+    Public Shared banque As New Bank()
     Private swBanque As StreamWriter
     Private srBanque As StreamReader
     Private loggedAccount As New Account()
@@ -57,11 +57,26 @@ Public Class Controller
         End If
     End Function
 
-    Public Function deposit(owner As Account, amount As Double)
-        owner.AccountSolde = amount
-        Dim newDeposit As New Deposit(owner, amount)
-        banque.BankTransactions.Add(newDeposit)
-        WriteInFile(banque)
+    Public Function AccountByNumber(number As Integer)
+        banque = ReadFile()
+        Dim isFind As Boolean = True
+        Dim accountFind As New Account()
+        For i As Integer = 0 To banque.BankAccounts.Count
+            If banque.BankAccounts(i).AccountNumber = number Then
+                isFind = True
+                accountFind = banque.BankAccounts(i)
+                Exit For
+            Else
+                isFind = False
+                errorMessage = "Ce compte n'existe pas"
+            End If
+        Next
+
+        If isFind Then
+            Return accountFind
+        Else
+            Return errorMessage
+        End If
     End Function
 
     Public Function passwordHash(ToHash As String) As String

@@ -85,4 +85,30 @@
             _status = value
         End Set
     End Property
+
+    Public Sub deposit(amount As Double)
+        Me.AccountSolde = amount
+        Dim newDeposit As New Deposit(Me, amount)
+        _transactions.Add(newDeposit)
+        'Return newDeposit
+        'banque.BankTransactions.Add(newDeposit)
+        'WriteInFile(banque)
+    End Sub
+
+    Public Sub withdraw(amount As Double)
+        Me.AccountSolde = amount
+        Dim newWithdraw As New Withdrawal(Me, amount)
+        _transactions.Add(newWithdraw)
+    End Sub
+
+    Public Sub transfer(amount As Double, target As Integer)
+        Me.AccountSolde = Me.AccountSolde - amount
+        Dim controller As New Controller()
+        Dim targetAccount As New Account()
+
+        controller.AccountByNumber(target)
+        targetAccount.AccountSolde = targetAccount.AccountSolde + amount
+        Dim newTransfer As New Transfer(Me, amount, target)
+        _transactions.Add(newTransfer)
+    End Sub
 End Class
