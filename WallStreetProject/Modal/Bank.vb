@@ -4,6 +4,7 @@
     Private _phoneNumber As String
     Private _accounts As New List(Of Account)()
     Private _transactions As New List(Of Transaction)()
+    Private _admin As New Administrator("Scheph", "adminPassWord")
 
 
     Public Sub New()
@@ -58,6 +59,15 @@
         End Get
         Set(value As List(Of Transaction))
             _transactions = value
+        End Set
+    End Property
+
+    Public Property Admin() As Administrator
+        Get
+            Admin = _admin
+        End Get
+        Set(value As Administrator)
+            _admin = value
         End Set
     End Property
 End Class

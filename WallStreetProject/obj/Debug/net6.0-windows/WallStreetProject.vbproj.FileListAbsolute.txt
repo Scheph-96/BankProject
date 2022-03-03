@@ -54,3 +54,11 @@ P:\Source-Code\Git\BankProject\WallStreetProject\obj\Debug\net6.0-windows\WallSt
 P:\Source-Code\Git\BankProject\WallStreetProject\obj\Debug\net6.0-windows\ref\WallStreetProject.dll
 P:\Source-Code\Git\BankProject\WallStreetProject\obj\Debug\net6.0-windows\WallStreetProject.pdb
 P:\Source-Code\Git\BankProject\WallStreetProject\obj\Debug\net6.0-windows\WallStreetProject.genruntimeconfig.cache
+P:\Source-Code\Git\BankProject\WallStreetProject\obj\Debug\net6.0-windows\WallStreetProject.AdminDashboard.resources
+P:\Source-Code\Git\BankProject\WallStreetProject\obj\Debug\net6.0-windows\WallStreetProject.AdminDashboardScreen.resources
+P:\Source-Code\Git\BankProject\WallStreetProject\obj\Debug\net6.0-windows\WallStreetProject.BlockAccountScreen.resources
+P:\Source-Code\Git\BankProject\WallStreetProject\obj\Debug\net6.0-windows\WallStreetProject.CreateAccountScreen.resources
+P:\Source-Code\Git\BankProject\WallStreetProject\obj\Debug\net6.0-windows\WallStreetProject.DeleteAccountScreen.resources
+P:\Source-Code\Git\BankProject\WallStreetProject\obj\Debug\net6.0-windows\WallStreetProject.DisplayAccountsScreen.resources
+P:\Source-Code\Git\BankProject\WallStreetProject\obj\Debug\net6.0-windows\WallStreetProject.DisplayTransactionsScreen.resources
+P:\Source-Code\Git\BankProject\WallStreetProject\obj\Debug\net6.0-windows\WallStreetProject.SetAccountInterestScreen.resources

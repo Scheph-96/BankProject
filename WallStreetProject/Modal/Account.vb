@@ -5,6 +5,7 @@
     Private _type As AccountsType
     Private _transactions As New List(Of Transaction)()
     Private _dateCreation As String
+    Private _status As AccountStatus
 
 
     Public Sub New()
@@ -16,6 +17,7 @@
         _customer = customer
         _type = type
         _dateCreation = DateTime.Now
+        _status = AccountStatus.active
     End Sub
 
 
@@ -72,6 +74,15 @@
         End Get
         Set(value As String)
             _dateCreation = value
+        End Set
+    End Property
+
+    Public Property AccountStatus() As AccountStatus
+        Get
+            AccountStatus = _status
+        End Get
+        Set(value As AccountStatus)
+            _status = value
         End Set
     End Property
 End Class

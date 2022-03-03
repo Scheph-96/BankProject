@@ -1,6 +1,7 @@
 ﻿Public Class Customer
     Private _lastName As String
     Private _firstName As String
+    Private _username As String
     Private _password As String
     Private _phoneNumber As String
 
@@ -8,10 +9,11 @@
 
     End Sub
 
-    Public Sub New(lastName As String, firstName As String, password As String, phoneNumber As String)
+    Public Sub New(lastName As String, firstName As String, username As String, password As String, phoneNumber As String)
         _lastName = lastName
         _firstName = firstName
         _password = password
+        _username = username
         _phoneNumber = phoneNumber
     End Sub
 
@@ -42,6 +44,16 @@
             _password = value
         End Set
     End Property
+
+    Public Property CustomerUserName() As String
+        Get
+            CustomerUserName = _username
+        End Get
+        Set(value As String)
+            _username = value
+        End Set
+    End Property
+
     Public Property CustomerPhoneNumber() As String
         Get
             CustomerPhoneNumber = _phoneNumber
