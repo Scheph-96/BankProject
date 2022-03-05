@@ -27,7 +27,6 @@ Partial Class AdminDashboardScreen
         Me.MenuContainer = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.LogoutPic = New System.Windows.Forms.PictureBox()
-        Me.UserFirstName = New System.Windows.Forms.Label()
         Me.UserLastName = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -49,7 +48,6 @@ Partial Class AdminDashboardScreen
         Me.Panel2.Controls.Add(Me.MenuContainer)
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.LogoutPic)
-        Me.Panel2.Controls.Add(Me.UserFirstName)
         Me.Panel2.Controls.Add(Me.UserLastName)
         Me.Panel2.Location = New System.Drawing.Point(13, 13)
         Me.Panel2.Name = "Panel2"
@@ -87,29 +85,17 @@ Partial Class AdminDashboardScreen
         Me.LogoutPic.TabIndex = 6
         Me.LogoutPic.TabStop = False
         '
-        'UserFirstName
-        '
-        Me.UserFirstName.AutoSize = True
-        Me.UserFirstName.BackColor = System.Drawing.Color.Transparent
-        Me.UserFirstName.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.UserFirstName.Location = New System.Drawing.Point(0, 22)
-        Me.UserFirstName.Margin = New System.Windows.Forms.Padding(0)
-        Me.UserFirstName.Name = "UserFirstName"
-        Me.UserFirstName.Size = New System.Drawing.Size(74, 18)
-        Me.UserFirstName.TabIndex = 4
-        Me.UserFirstName.Text = "firstname"
-        '
         'UserLastName
         '
         Me.UserLastName.AutoSize = True
         Me.UserLastName.BackColor = System.Drawing.Color.Transparent
-        Me.UserLastName.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.UserLastName.Location = New System.Drawing.Point(0, 0)
+        Me.UserLastName.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.UserLastName.Location = New System.Drawing.Point(0, 9)
         Me.UserLastName.Margin = New System.Windows.Forms.Padding(0)
         Me.UserLastName.Name = "UserLastName"
-        Me.UserLastName.Size = New System.Drawing.Size(71, 18)
+        Me.UserLastName.Size = New System.Drawing.Size(206, 32)
         Me.UserLastName.TabIndex = 2
-        Me.UserLastName.Text = "lastname"
+        Me.UserLastName.Text = "OMAR'S BANK"
         '
         'AdminDashboardScreen
         '
@@ -131,6 +117,5 @@ Partial Class AdminDashboardScreen
     Friend WithEvents MenuContainer As Panel
     Friend WithEvents Label6 As Label
     Friend WithEvents LogoutPic As PictureBox
-    Friend WithEvents UserFirstName As Label
     Friend WithEvents UserLastName As Label
 End Class

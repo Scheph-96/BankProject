@@ -1,1 +1,11 @@
-{"BanqueName":"Omar'sBank","BanqueAddress":"Somewhere 12","BanquePhoneNumber":"900000","BanqueComptes":[],"BanqueTransactions":[]}
+{
+    "BankName": "Omar'sBank",
+    "BankAddress": "Somewhere 12",
+    "BankPhoneNumber": "90000000",
+    "BankAccounts": [],
+    "BankTransactions": [],
+    "Admin": {
+        "AdminName": "Scheph",
+        "AdminPassword": "YWRtaW5QYXNzV29yZA=="
+    }
+}

@@ -25,6 +25,8 @@ Partial Class UserLoginScreen
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.PasswordErrorMessage = New System.Windows.Forms.Label()
+        Me.UsernameErrorMessage = New System.Windows.Forms.Label()
         Me.PasswordDisplayer = New System.Windows.Forms.CheckBox()
         Me.LoginButton = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -69,6 +71,8 @@ Partial Class UserLoginScreen
         '
         'Panel5
         '
+        Me.Panel5.Controls.Add(Me.PasswordErrorMessage)
+        Me.Panel5.Controls.Add(Me.UsernameErrorMessage)
         Me.Panel5.Controls.Add(Me.PasswordDisplayer)
         Me.Panel5.Controls.Add(Me.LoginButton)
         Me.Panel5.Controls.Add(Me.Label3)
@@ -84,13 +88,33 @@ Partial Class UserLoginScreen
         Me.Panel5.Size = New System.Drawing.Size(351, 290)
         Me.Panel5.TabIndex = 13
         '
+        'PasswordErrorMessage
+        '
+        Me.PasswordErrorMessage.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.PasswordErrorMessage.ForeColor = System.Drawing.Color.Red
+        Me.PasswordErrorMessage.Location = New System.Drawing.Point(3, 155)
+        Me.PasswordErrorMessage.Name = "PasswordErrorMessage"
+        Me.PasswordErrorMessage.Size = New System.Drawing.Size(345, 17)
+        Me.PasswordErrorMessage.TabIndex = 23
+        Me.PasswordErrorMessage.Text = "Label5"
+        '
+        'UsernameErrorMessage
+        '
+        Me.UsernameErrorMessage.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.UsernameErrorMessage.ForeColor = System.Drawing.Color.Red
+        Me.UsernameErrorMessage.Location = New System.Drawing.Point(3, 86)
+        Me.UsernameErrorMessage.Name = "UsernameErrorMessage"
+        Me.UsernameErrorMessage.Size = New System.Drawing.Size(345, 17)
+        Me.UsernameErrorMessage.TabIndex = 22
+        Me.UsernameErrorMessage.Text = "Label5"
+        '
         'PasswordDisplayer
         '
         Me.PasswordDisplayer.AutoSize = True
         Me.PasswordDisplayer.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PasswordDisplayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.PasswordDisplayer.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.PasswordDisplayer.Location = New System.Drawing.Point(3, 162)
+        Me.PasswordDisplayer.Location = New System.Drawing.Point(3, 175)
         Me.PasswordDisplayer.Name = "PasswordDisplayer"
         Me.PasswordDisplayer.Size = New System.Drawing.Size(124, 20)
         Me.PasswordDisplayer.TabIndex = 20
@@ -106,7 +130,7 @@ Partial Class UserLoginScreen
         Me.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.LoginButton.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.LoginButton.ForeColor = System.Drawing.Color.White
-        Me.LoginButton.Location = New System.Drawing.Point(3, 195)
+        Me.LoginButton.Location = New System.Drawing.Point(3, 202)
         Me.LoginButton.Name = "LoginButton"
         Me.LoginButton.Size = New System.Drawing.Size(345, 44)
         Me.LoginButton.TabIndex = 19
@@ -118,7 +142,7 @@ Partial Class UserLoginScreen
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(56, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(3, 102)
+        Me.Label3.Location = New System.Drawing.Point(3, 105)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(96, 21)
         Me.Label3.TabIndex = 18
@@ -130,7 +154,7 @@ Partial Class UserLoginScreen
         Me.PasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.PasswordTextBox.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.PasswordTextBox.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(56, Byte), Integer))
-        Me.PasswordTextBox.Location = New System.Drawing.Point(3, 126)
+        Me.PasswordTextBox.Location = New System.Drawing.Point(3, 129)
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.Size = New System.Drawing.Size(345, 19)
         Me.PasswordTextBox.TabIndex = 17
@@ -139,7 +163,7 @@ Partial Class UserLoginScreen
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(56, Byte), Integer))
-        Me.Panel3.Location = New System.Drawing.Point(3, 147)
+        Me.Panel3.Location = New System.Drawing.Point(3, 150)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(345, 1)
         Me.Panel3.TabIndex = 16
@@ -252,4 +276,6 @@ Partial Class UserLoginScreen
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents AdminLoginLink As LinkLabel
+    Friend WithEvents PasswordErrorMessage As Label
+    Friend WithEvents UsernameErrorMessage As Label
 End Class

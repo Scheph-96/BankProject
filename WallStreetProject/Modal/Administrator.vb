@@ -2,6 +2,10 @@
     Private _adminName As String
     Private _password As String
 
+    Sub New()
+
+    End Sub
+
     Sub New(adminName As String, password As String)
         _adminName = adminName
         _password = password

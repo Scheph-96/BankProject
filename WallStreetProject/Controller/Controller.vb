@@ -3,9 +3,10 @@ Imports System.IO
 Imports System.Text
 
 Public Class Controller
-    Public Shared banque As New Bank()
+    Private banque As New Bank()
     Private swBanque As StreamWriter
     Private srBanque As StreamReader
+    Private myBanqueSerializer As JsonSerializer
     Private loggedAccount As New Account()
     Private hashedPassword As String = String.Empty
     Private errorMessage As String = String.Empty
@@ -13,27 +14,38 @@ Public Class Controller
     Public Sub WriteInFile(myBanque As Bank)
         'Serialize Object to an JSON File
         swBanque = New StreamWriter("P:\Source-Code\Git\BankProject\WallStreetProject\Project\Data\data.json", False)
-        Dim myBanqueSerializer As New JsonSerializer()
-        myBanqueSerializer.Serialize(swBanque, myBanque)
+        Using jsonWriter As New JsonTextWriter(swBanque)
+
+            jsonWriter.Formatting = Formatting.Indented
+            'jsonWriter.IndentChar = "-"
+            jsonWriter.Indentation = 4
+
+            myBanqueSerializer = New JsonSerializer()
+            myBanqueSerializer.Serialize(jsonWriter, myBanque)
+
+        End Using
         swBanque.Close()
     End Sub
 
     Public Function ReadFile() As Bank
         'Deserialize JSON to a new Banque Object
         srBanque = New StreamReader("P:\Source-Code\Git\BankProject\WallStreetProject\Project\Data\data.json")
-        Dim myBanqueSerializer As New JsonSerializer()
+        myBanqueSerializer = New JsonSerializer()
         banque = myBanqueSerializer.Deserialize(srBanque, banque.GetType)
         srBanque.Close()
         Return banque
     End Function
 
-    Public Function CustomerLogin(username As String, password As String)
+    Public Function CustomerLogin(username As String, password As String, userDashBoard As UserDashboardScreen, userLoginScreen As UserLoginScreen)
         banque = ReadFile()
         Dim isFind As Boolean = True
         For i As Integer = 0 To banque.BankAccounts.Count
             If banque.BankAccounts(i).AccountOwner.CustomerUserName = username And banque.BankAccounts(i).AccountOwner.CustomerPassword = passwordHash(password) Then
-                isFind = True
-                loggedAccount = banque.BankAccounts(i)
+                'isFind = True
+                'loggedAccount = banque.BankAccounts(i)
+                userDashBoard.Owner = banque.BankAccounts(i)
+                userLoginScreen.Dispose()
+                userDashBoard.Show()
                 Exit For
             Else
                 isFind = False
@@ -78,6 +90,8 @@ Public Class Controller
             Return errorMessage
         End If
     End Function
+
+    'Public Function createAccount()
 
     Public Function passwordHash(ToHash As String) As String
         'Encrytion function

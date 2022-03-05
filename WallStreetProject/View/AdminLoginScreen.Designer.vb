@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AdminLoginScreen
     Inherits System.Windows.Forms.UserControl
 
     'UserControl remplace la méthode Dispose pour nettoyer la liste des composants.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,12 @@ Partial Class AdminLoginScreen
     'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
     'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
     'Ne la modifiez pas à l'aide de l'éditeur de code.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.LoginErrorMessage = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.UserLoginLink = New System.Windows.Forms.LinkLabel()
@@ -69,6 +70,7 @@ Partial Class AdminLoginScreen
         '
         'Panel5
         '
+        Me.Panel5.Controls.Add(Me.LoginErrorMessage)
         Me.Panel5.Controls.Add(Me.Panel4)
         Me.Panel5.Controls.Add(Me.AdminPasswordDisplayer)
         Me.Panel5.Controls.Add(Me.AdminLoginButton)
@@ -84,11 +86,21 @@ Partial Class AdminLoginScreen
         Me.Panel5.Size = New System.Drawing.Size(351, 304)
         Me.Panel5.TabIndex = 14
         '
+        'LoginErrorMessage
+        '
+        Me.LoginErrorMessage.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.LoginErrorMessage.ForeColor = System.Drawing.Color.Red
+        Me.LoginErrorMessage.Location = New System.Drawing.Point(0, 199)
+        Me.LoginErrorMessage.Name = "LoginErrorMessage"
+        Me.LoginErrorMessage.Size = New System.Drawing.Size(345, 17)
+        Me.LoginErrorMessage.TabIndex = 25
+        Me.LoginErrorMessage.Text = "Label5"
+        '
         'Panel4
         '
         Me.Panel4.Controls.Add(Me.Label4)
         Me.Panel4.Controls.Add(Me.UserLoginLink)
-        Me.Panel4.Location = New System.Drawing.Point(3, 265)
+        Me.Panel4.Location = New System.Drawing.Point(3, 274)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(345, 27)
         Me.Panel4.TabIndex = 22
@@ -122,7 +134,7 @@ Partial Class AdminLoginScreen
         Me.AdminPasswordDisplayer.Cursor = System.Windows.Forms.Cursors.Hand
         Me.AdminPasswordDisplayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AdminPasswordDisplayer.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.AdminPasswordDisplayer.Location = New System.Drawing.Point(3, 178)
+        Me.AdminPasswordDisplayer.Location = New System.Drawing.Point(0, 173)
         Me.AdminPasswordDisplayer.Name = "AdminPasswordDisplayer"
         Me.AdminPasswordDisplayer.Size = New System.Drawing.Size(124, 20)
         Me.AdminPasswordDisplayer.TabIndex = 21
@@ -138,7 +150,7 @@ Partial Class AdminLoginScreen
         Me.AdminLoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AdminLoginButton.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.AdminLoginButton.ForeColor = System.Drawing.Color.White
-        Me.AdminLoginButton.Location = New System.Drawing.Point(3, 211)
+        Me.AdminLoginButton.Location = New System.Drawing.Point(3, 224)
         Me.AdminLoginButton.Name = "AdminLoginButton"
         Me.AdminLoginButton.Size = New System.Drawing.Size(345, 44)
         Me.AdminLoginButton.TabIndex = 20
@@ -150,7 +162,7 @@ Partial Class AdminLoginScreen
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(56, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(3, 118)
+        Me.Label3.Location = New System.Drawing.Point(3, 121)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(96, 21)
         Me.Label3.TabIndex = 19
@@ -162,7 +174,7 @@ Partial Class AdminLoginScreen
         Me.AdminPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.AdminPasswordTextBox.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.AdminPasswordTextBox.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(56, Byte), Integer))
-        Me.AdminPasswordTextBox.Location = New System.Drawing.Point(3, 142)
+        Me.AdminPasswordTextBox.Location = New System.Drawing.Point(3, 145)
         Me.AdminPasswordTextBox.Name = "AdminPasswordTextBox"
         Me.AdminPasswordTextBox.Size = New System.Drawing.Size(345, 19)
         Me.AdminPasswordTextBox.TabIndex = 18
@@ -171,7 +183,7 @@ Partial Class AdminLoginScreen
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(56, Byte), Integer))
-        Me.Panel3.Location = New System.Drawing.Point(3, 163)
+        Me.Panel3.Location = New System.Drawing.Point(3, 166)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(345, 1)
         Me.Panel3.TabIndex = 17
@@ -215,7 +227,7 @@ Partial Class AdminLoginScreen
         Me.Label1.ForeColor = System.Drawing.Color.DodgerBlue
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(351, 40)
+        Me.Label1.Size = New System.Drawing.Size(351, 36)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Login As Administrator"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -251,4 +263,5 @@ Partial Class AdminLoginScreen
     Friend WithEvents AdminNameTextBox As TextBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label1 As Label
+    Friend WithEvents LoginErrorMessage As Label
 End Class

@@ -22,6 +22,7 @@ Partial Class SplashScreen
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.SplashScreenBg = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -31,6 +32,7 @@ Partial Class SplashScreen
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SplashScreenImage = New System.Windows.Forms.PictureBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SplashScreenBg.SuspendLayout()
         CType(Me.SplashScreenImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -137,6 +139,9 @@ Partial Class SplashScreen
         Me.SplashScreenImage.TabIndex = 0
         Me.SplashScreenImage.TabStop = False
         '
+        'Timer1
+        '
+        '
         'SplashScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -162,4 +167,5 @@ Partial Class SplashScreen
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label7 As Label
+    Friend WithEvents Timer1 As Timer
 End Class
