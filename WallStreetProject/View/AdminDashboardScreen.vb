@@ -1,6 +1,5 @@
 ﻿Public Class AdminDashboardScreen
     Private adminDashboard As New AdminDashboard
-    Private loginScreen As New LoginScreen()
 
     Private Sub AdminDashboardScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LogoutPic.Image = WallStreetProject.My.Resources.logout
@@ -8,6 +7,7 @@
     End Sub
 
     Private Sub LogoutPic_Click(sender As Object, e As EventArgs) Handles LogoutPic.Click
+        Dim loginScreen As New LoginScreen()
         Parent.Dispose()
         loginScreen.ShowDialog()
     End Sub

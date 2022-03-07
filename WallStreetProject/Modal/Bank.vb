@@ -4,7 +4,7 @@
     Private _phoneNumber As String
     Private _accounts As New List(Of Account)()
     Private _transactions As New List(Of Transaction)()
-    Private _admin As New Administrator("Scheph", "YWRtaW5QYXNzV29yZA==")
+    Private _admin As New Administrator("Scheph", "YWRtaW5QYXNzV29yZA==") ' Password as adminPassWord
 
 
     Public Sub New()

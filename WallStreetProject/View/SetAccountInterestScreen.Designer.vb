@@ -24,19 +24,19 @@ Partial Class SetAccountInterestScreen
     Private Sub InitializeComponent()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.NewInterest = New System.Windows.Forms.TextBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.PasswordDisplayer = New System.Windows.Forms.CheckBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.UserPassword = New System.Windows.Forms.TextBox()
+        Me.AdminPassword = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.ConfirmWithdraw = New System.Windows.Forms.Button()
+        Me.ConfirmSetting = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.WithdrawAmount = New System.Windows.Forms.TextBox()
+        Me.AccountNumber = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BackPic = New System.Windows.Forms.PictureBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.BackPic, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,15 +61,15 @@ Partial Class SetAccountInterestScreen
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.NewInterest)
         Me.Panel1.Controls.Add(Me.Panel4)
         Me.Panel1.Controls.Add(Me.PasswordDisplayer)
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.UserPassword)
+        Me.Panel1.Controls.Add(Me.AdminPassword)
         Me.Panel1.Controls.Add(Me.Panel3)
-        Me.Panel1.Controls.Add(Me.ConfirmWithdraw)
+        Me.Panel1.Controls.Add(Me.ConfirmSetting)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.WithdrawAmount)
+        Me.Panel1.Controls.Add(Me.AccountNumber)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(211, 0)
@@ -77,6 +77,37 @@ Partial Class SetAccountInterestScreen
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(336, 338)
         Me.Panel1.TabIndex = 2
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label4.Location = New System.Drawing.Point(3, 105)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(188, 21)
+        Me.Label4.TabIndex = 15
+        Me.Label4.Text = "Nouveau taux d'intérêt"
+        '
+        'NewInterest
+        '
+        Me.NewInterest.BackColor = System.Drawing.SystemColors.Control
+        Me.NewInterest.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.NewInterest.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.NewInterest.Location = New System.Drawing.Point(3, 130)
+        Me.NewInterest.Margin = New System.Windows.Forms.Padding(0)
+        Me.NewInterest.Name = "NewInterest"
+        Me.NewInterest.Size = New System.Drawing.Size(336, 20)
+        Me.NewInterest.TabIndex = 14
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.Black
+        Me.Panel4.Location = New System.Drawing.Point(3, 150)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(336, 1)
+        Me.Panel4.TabIndex = 13
         '
         'PasswordDisplayer
         '
@@ -100,17 +131,17 @@ Partial Class SetAccountInterestScreen
         Me.Label3.TabIndex = 11
         Me.Label3.Text = "Mot de passe"
         '
-        'UserPassword
+        'AdminPassword
         '
-        Me.UserPassword.BackColor = System.Drawing.SystemColors.Control
-        Me.UserPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.UserPassword.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.UserPassword.Location = New System.Drawing.Point(0, 186)
-        Me.UserPassword.Margin = New System.Windows.Forms.Padding(0)
-        Me.UserPassword.Name = "UserPassword"
-        Me.UserPassword.Size = New System.Drawing.Size(336, 20)
-        Me.UserPassword.TabIndex = 10
-        Me.UserPassword.UseSystemPasswordChar = True
+        Me.AdminPassword.BackColor = System.Drawing.SystemColors.Control
+        Me.AdminPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.AdminPassword.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.AdminPassword.Location = New System.Drawing.Point(0, 186)
+        Me.AdminPassword.Margin = New System.Windows.Forms.Padding(0)
+        Me.AdminPassword.Name = "AdminPassword"
+        Me.AdminPassword.Size = New System.Drawing.Size(336, 20)
+        Me.AdminPassword.TabIndex = 10
+        Me.AdminPassword.UseSystemPasswordChar = True
         '
         'Panel3
         '
@@ -121,20 +152,20 @@ Partial Class SetAccountInterestScreen
         Me.Panel3.Size = New System.Drawing.Size(336, 1)
         Me.Panel3.TabIndex = 9
         '
-        'ConfirmWithdraw
+        'ConfirmSetting
         '
-        Me.ConfirmWithdraw.BackColor = System.Drawing.Color.DodgerBlue
-        Me.ConfirmWithdraw.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ConfirmWithdraw.FlatAppearance.BorderSize = 0
-        Me.ConfirmWithdraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ConfirmWithdraw.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.ConfirmWithdraw.ForeColor = System.Drawing.Color.White
-        Me.ConfirmWithdraw.Location = New System.Drawing.Point(3, 266)
-        Me.ConfirmWithdraw.Name = "ConfirmWithdraw"
-        Me.ConfirmWithdraw.Size = New System.Drawing.Size(336, 45)
-        Me.ConfirmWithdraw.TabIndex = 7
-        Me.ConfirmWithdraw.Text = "Confirmer"
-        Me.ConfirmWithdraw.UseVisualStyleBackColor = False
+        Me.ConfirmSetting.BackColor = System.Drawing.Color.DodgerBlue
+        Me.ConfirmSetting.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ConfirmSetting.FlatAppearance.BorderSize = 0
+        Me.ConfirmSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ConfirmSetting.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.ConfirmSetting.ForeColor = System.Drawing.Color.White
+        Me.ConfirmSetting.Location = New System.Drawing.Point(3, 266)
+        Me.ConfirmSetting.Name = "ConfirmSetting"
+        Me.ConfirmSetting.Size = New System.Drawing.Size(336, 45)
+        Me.ConfirmSetting.TabIndex = 7
+        Me.ConfirmSetting.Text = "Confirmer"
+        Me.ConfirmSetting.UseVisualStyleBackColor = False
         '
         'Label2
         '
@@ -147,16 +178,16 @@ Partial Class SetAccountInterestScreen
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Numéro du compte"
         '
-        'WithdrawAmount
+        'AccountNumber
         '
-        Me.WithdrawAmount.BackColor = System.Drawing.SystemColors.Control
-        Me.WithdrawAmount.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WithdrawAmount.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.WithdrawAmount.Location = New System.Drawing.Point(3, 71)
-        Me.WithdrawAmount.Margin = New System.Windows.Forms.Padding(0)
-        Me.WithdrawAmount.Name = "WithdrawAmount"
-        Me.WithdrawAmount.Size = New System.Drawing.Size(336, 20)
-        Me.WithdrawAmount.TabIndex = 2
+        Me.AccountNumber.BackColor = System.Drawing.SystemColors.Control
+        Me.AccountNumber.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.AccountNumber.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.AccountNumber.Location = New System.Drawing.Point(3, 71)
+        Me.AccountNumber.Margin = New System.Windows.Forms.Padding(0)
+        Me.AccountNumber.Name = "AccountNumber"
+        Me.AccountNumber.Size = New System.Drawing.Size(336, 20)
+        Me.AccountNumber.TabIndex = 2
         '
         'Panel2
         '
@@ -189,37 +220,6 @@ Partial Class SetAccountInterestScreen
         Me.BackPic.TabIndex = 1
         Me.BackPic.TabStop = False
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label4.Location = New System.Drawing.Point(3, 105)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(188, 21)
-        Me.Label4.TabIndex = 15
-        Me.Label4.Text = "Nouveau taux d'intérêt"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.TextBox1.Location = New System.Drawing.Point(3, 130)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(0)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(336, 20)
-        Me.TextBox1.TabIndex = 14
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.Black
-        Me.Panel4.Location = New System.Drawing.Point(3, 150)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(336, 1)
-        Me.Panel4.TabIndex = 13
-        '
         'SetAccountInterestScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -238,15 +238,15 @@ Partial Class SetAccountInterestScreen
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents NewInterest As TextBox
     Friend WithEvents Panel4 As Panel
     Friend WithEvents PasswordDisplayer As CheckBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents UserPassword As TextBox
+    Friend WithEvents AdminPassword As TextBox
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents ConfirmWithdraw As Button
+    Friend WithEvents ConfirmSetting As Button
     Friend WithEvents Label2 As Label
-    Friend WithEvents WithdrawAmount As TextBox
+    Friend WithEvents AccountNumber As TextBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents BackPic As PictureBox

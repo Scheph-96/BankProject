@@ -87,7 +87,7 @@ Partial Class CreateAccountScreen
         '
         Me.Panel3.Controls.Add(Me.SavingAccountRadioBtn)
         Me.Panel3.Controls.Add(Me.CheckingAccountRadioBtn)
-        Me.Panel3.Location = New System.Drawing.Point(44, 229)
+        Me.Panel3.Location = New System.Drawing.Point(42, 233)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(251, 40)
         Me.Panel3.TabIndex = 18
@@ -120,7 +120,7 @@ Partial Class CreateAccountScreen
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.Location = New System.Drawing.Point(0, 205)
+        Me.Label3.Location = New System.Drawing.Point(0, 208)
         Me.Label3.Margin = New System.Windows.Forms.Padding(0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(138, 21)
@@ -131,7 +131,7 @@ Partial Class CreateAccountScreen
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label5.Location = New System.Drawing.Point(1, 147)
+        Me.Label5.Location = New System.Drawing.Point(1, 154)
         Me.Label5.Margin = New System.Windows.Forms.Padding(0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(182, 21)
@@ -143,7 +143,7 @@ Partial Class CreateAccountScreen
         Me.CustomerPhoneNumber.BackColor = System.Drawing.SystemColors.Control
         Me.CustomerPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.CustomerPhoneNumber.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.CustomerPhoneNumber.Location = New System.Drawing.Point(1, 172)
+        Me.CustomerPhoneNumber.Location = New System.Drawing.Point(1, 179)
         Me.CustomerPhoneNumber.Margin = New System.Windows.Forms.Padding(0)
         Me.CustomerPhoneNumber.Name = "CustomerPhoneNumber"
         Me.CustomerPhoneNumber.Size = New System.Drawing.Size(336, 20)
@@ -152,7 +152,7 @@ Partial Class CreateAccountScreen
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.Black
-        Me.Panel5.Location = New System.Drawing.Point(1, 192)
+        Me.Panel5.Location = New System.Drawing.Point(1, 199)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(336, 1)
@@ -162,7 +162,7 @@ Partial Class CreateAccountScreen
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label4.Location = New System.Drawing.Point(1, 92)
+        Me.Label4.Location = New System.Drawing.Point(1, 99)
         Me.Label4.Margin = New System.Windows.Forms.Padding(0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(81, 21)
@@ -174,7 +174,7 @@ Partial Class CreateAccountScreen
         Me.CustomerFirstName.BackColor = System.Drawing.SystemColors.Control
         Me.CustomerFirstName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.CustomerFirstName.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.CustomerFirstName.Location = New System.Drawing.Point(1, 117)
+        Me.CustomerFirstName.Location = New System.Drawing.Point(1, 124)
         Me.CustomerFirstName.Margin = New System.Windows.Forms.Padding(0)
         Me.CustomerFirstName.Name = "CustomerFirstName"
         Me.CustomerFirstName.Size = New System.Drawing.Size(336, 20)
@@ -183,7 +183,7 @@ Partial Class CreateAccountScreen
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.Black
-        Me.Panel4.Location = New System.Drawing.Point(1, 137)
+        Me.Panel4.Location = New System.Drawing.Point(1, 144)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(336, 1)
@@ -208,7 +208,7 @@ Partial Class CreateAccountScreen
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.Location = New System.Drawing.Point(0, 37)
+        Me.Label2.Location = New System.Drawing.Point(0, 44)
         Me.Label2.Margin = New System.Windows.Forms.Padding(0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(47, 21)
@@ -220,7 +220,7 @@ Partial Class CreateAccountScreen
         Me.CustomerLastName.BackColor = System.Drawing.SystemColors.Control
         Me.CustomerLastName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.CustomerLastName.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.CustomerLastName.Location = New System.Drawing.Point(0, 62)
+        Me.CustomerLastName.Location = New System.Drawing.Point(0, 69)
         Me.CustomerLastName.Margin = New System.Windows.Forms.Padding(0)
         Me.CustomerLastName.Name = "CustomerLastName"
         Me.CustomerLastName.Size = New System.Drawing.Size(336, 20)
@@ -229,7 +229,7 @@ Partial Class CreateAccountScreen
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Black
-        Me.Panel2.Location = New System.Drawing.Point(0, 82)
+        Me.Panel2.Location = New System.Drawing.Point(0, 89)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(336, 1)

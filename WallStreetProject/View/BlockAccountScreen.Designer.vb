@@ -26,11 +26,11 @@ Partial Class BlockAccountScreen
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PasswordDisplayer = New System.Windows.Forms.CheckBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.UserPassword = New System.Windows.Forms.TextBox()
+        Me.AdminPassword = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.ConfirmWithdraw = New System.Windows.Forms.Button()
+        Me.ConfirmBlock = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.WithdrawAmount = New System.Windows.Forms.TextBox()
+        Me.AccountNumber = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BackPic = New System.Windows.Forms.PictureBox()
@@ -59,11 +59,11 @@ Partial Class BlockAccountScreen
         '
         Me.Panel1.Controls.Add(Me.PasswordDisplayer)
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.UserPassword)
+        Me.Panel1.Controls.Add(Me.AdminPassword)
         Me.Panel1.Controls.Add(Me.Panel3)
-        Me.Panel1.Controls.Add(Me.ConfirmWithdraw)
+        Me.Panel1.Controls.Add(Me.ConfirmBlock)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.WithdrawAmount)
+        Me.Panel1.Controls.Add(Me.AccountNumber)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(211, 0)
@@ -94,17 +94,17 @@ Partial Class BlockAccountScreen
         Me.Label3.TabIndex = 11
         Me.Label3.Text = "Mot de passe"
         '
-        'UserPassword
+        'AdminPassword
         '
-        Me.UserPassword.BackColor = System.Drawing.SystemColors.Control
-        Me.UserPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.UserPassword.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.UserPassword.Location = New System.Drawing.Point(0, 149)
-        Me.UserPassword.Margin = New System.Windows.Forms.Padding(0)
-        Me.UserPassword.Name = "UserPassword"
-        Me.UserPassword.Size = New System.Drawing.Size(336, 20)
-        Me.UserPassword.TabIndex = 10
-        Me.UserPassword.UseSystemPasswordChar = True
+        Me.AdminPassword.BackColor = System.Drawing.SystemColors.Control
+        Me.AdminPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.AdminPassword.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.AdminPassword.Location = New System.Drawing.Point(0, 149)
+        Me.AdminPassword.Margin = New System.Windows.Forms.Padding(0)
+        Me.AdminPassword.Name = "AdminPassword"
+        Me.AdminPassword.Size = New System.Drawing.Size(336, 20)
+        Me.AdminPassword.TabIndex = 10
+        Me.AdminPassword.UseSystemPasswordChar = True
         '
         'Panel3
         '
@@ -115,20 +115,20 @@ Partial Class BlockAccountScreen
         Me.Panel3.Size = New System.Drawing.Size(336, 1)
         Me.Panel3.TabIndex = 9
         '
-        'ConfirmWithdraw
+        'ConfirmBlock
         '
-        Me.ConfirmWithdraw.BackColor = System.Drawing.Color.Red
-        Me.ConfirmWithdraw.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ConfirmWithdraw.FlatAppearance.BorderSize = 0
-        Me.ConfirmWithdraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ConfirmWithdraw.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.ConfirmWithdraw.ForeColor = System.Drawing.Color.White
-        Me.ConfirmWithdraw.Location = New System.Drawing.Point(3, 229)
-        Me.ConfirmWithdraw.Name = "ConfirmWithdraw"
-        Me.ConfirmWithdraw.Size = New System.Drawing.Size(336, 45)
-        Me.ConfirmWithdraw.TabIndex = 7
-        Me.ConfirmWithdraw.Text = "Confirmer"
-        Me.ConfirmWithdraw.UseVisualStyleBackColor = False
+        Me.ConfirmBlock.BackColor = System.Drawing.Color.Red
+        Me.ConfirmBlock.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ConfirmBlock.FlatAppearance.BorderSize = 0
+        Me.ConfirmBlock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ConfirmBlock.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.ConfirmBlock.ForeColor = System.Drawing.Color.White
+        Me.ConfirmBlock.Location = New System.Drawing.Point(3, 229)
+        Me.ConfirmBlock.Name = "ConfirmBlock"
+        Me.ConfirmBlock.Size = New System.Drawing.Size(336, 45)
+        Me.ConfirmBlock.TabIndex = 7
+        Me.ConfirmBlock.Text = "Confirmer"
+        Me.ConfirmBlock.UseVisualStyleBackColor = False
         '
         'Label2
         '
@@ -141,16 +141,16 @@ Partial Class BlockAccountScreen
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Numéro du compte"
         '
-        'WithdrawAmount
+        'AccountNumber
         '
-        Me.WithdrawAmount.BackColor = System.Drawing.SystemColors.Control
-        Me.WithdrawAmount.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WithdrawAmount.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.WithdrawAmount.Location = New System.Drawing.Point(3, 78)
-        Me.WithdrawAmount.Margin = New System.Windows.Forms.Padding(0)
-        Me.WithdrawAmount.Name = "WithdrawAmount"
-        Me.WithdrawAmount.Size = New System.Drawing.Size(336, 20)
-        Me.WithdrawAmount.TabIndex = 2
+        Me.AccountNumber.BackColor = System.Drawing.SystemColors.Control
+        Me.AccountNumber.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.AccountNumber.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.AccountNumber.Location = New System.Drawing.Point(3, 78)
+        Me.AccountNumber.Margin = New System.Windows.Forms.Padding(0)
+        Me.AccountNumber.Name = "AccountNumber"
+        Me.AccountNumber.Size = New System.Drawing.Size(336, 20)
+        Me.AccountNumber.TabIndex = 2
         '
         'Panel2
         '
@@ -183,12 +183,12 @@ Partial Class BlockAccountScreen
         Me.BackPic.TabIndex = 1
         Me.BackPic.TabStop = False
         '
-        'BlockAccount
+        'BlockAccountScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.TableLayoutPanel1)
-        Me.Name = "BlockAccount"
+        Me.Name = "BlockAccountScreen"
         Me.Size = New System.Drawing.Size(758, 338)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
@@ -202,11 +202,11 @@ Partial Class BlockAccountScreen
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PasswordDisplayer As CheckBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents UserPassword As TextBox
+    Friend WithEvents AdminPassword As TextBox
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents ConfirmWithdraw As Button
+    Friend WithEvents ConfirmBlock As Button
     Friend WithEvents Label2 As Label
-    Friend WithEvents WithdrawAmount As TextBox
+    Friend WithEvents AccountNumber As TextBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents BackPic As PictureBox

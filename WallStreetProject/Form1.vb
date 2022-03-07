@@ -4,11 +4,12 @@
     Private _incomeRequest As String
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
-        If _incomeRequest = "admin" Then
-            Me.Controls.Add(adminDashboard)
-        Else
-            Me.Controls.Add(userDashborad)
-        End If
+        Me.Controls.Add(adminDashboard)
+        'If _incomeRequest = "admin" Then
+        '    Me.Controls.Add(adminDashboard)
+        'Else
+        '    Me.Controls.Add(userDashborad)
+        'End If
     End Sub
 
     Public Property IncomeRequest() As String

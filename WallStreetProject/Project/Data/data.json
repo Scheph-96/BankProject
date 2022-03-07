@@ -2,7 +2,38 @@
     "BankName": "Omar'sBank",
     "BankAddress": "Somewhere 12",
     "BankPhoneNumber": "90000000",
-    "BankAccounts": [],
+    "BankAccounts": [
+        {
+            "AccountNumber": 1,
+            "AccountOwner": {
+                "CustomerLastName": "N'DJAMBARA",
+                "CustomerFirstName": "Omorou",
+                "CustomerPassword": "QDEyMzQ1Njc4OTBA",
+                "CustomerUserName": "OmorouN'DJAMBARA",
+                "CustomerPhoneNumber": "+228 98960193"
+            },
+            "AccountSolde": 0.0,
+            "AccountType": 0,
+            "AccountTransactions": [],
+            "AccountCreationDate": "07/03/2022 19:38:34",
+            "AccountStatus": 2
+        },
+        {
+            "AccountNumber": 2,
+            "AccountOwner": {
+                "CustomerLastName": "Azerty",
+                "CustomerFirstName": "Qwerty",
+                "CustomerPassword": "QDEyMzQ1Njc4OTBA",
+                "CustomerUserName": "QwertyAzerty",
+                "CustomerPhoneNumber": "+228 96478734"
+            },
+            "AccountSolde": 150.0,
+            "AccountType": 1,
+            "AccountTransactions": [],
+            "AccountCreationDate": "07/03/2022 22:22:50",
+            "AccountStatus": 1
+        }
+    ],
     "BankTransactions": [],
     "Admin": {
         "AdminName": "Scheph",

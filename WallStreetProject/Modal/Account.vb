@@ -20,6 +20,16 @@
         _status = AccountStatus.active
     End Sub
 
+    Public Sub New(account As Account)
+        _number = account.AccountNumber
+        _customer = account.AccountOwner
+        _solde = account.AccountSolde
+        _type = account.AccountType
+        _transactions = account.AccountTransactions
+        _dateCreation = account.AccountCreationDate
+        _status = account.AccountStatus
+    End Sub
+
 
     Public Property AccountNumber() As Integer
         Get
