@@ -28,11 +28,6 @@ Partial Class AdminDashboard
         Me.InterestPic = New System.Windows.Forms.PictureBox()
         Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.BlockAccountSection = New System.Windows.Forms.Panel()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.BlockAccountPic = New System.Windows.Forms.PictureBox()
-        Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.DisplayTransactionSection = New System.Windows.Forms.Panel()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel5 = New System.Windows.Forms.FlowLayoutPanel()
@@ -52,13 +47,19 @@ Partial Class AdminDashboard
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CreateAccountPic = New System.Windows.Forms.PictureBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.ActiveAccountSection = New System.Windows.Forms.Panel()
+        Me.ActiveAccountPic = New System.Windows.Forms.PictureBox()
+        Me.FlowLayoutPanel6 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.BlockAccountSection = New System.Windows.Forms.Panel()
+        Me.BlockAccountPic = New System.Windows.Forms.PictureBox()
+        Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.InterestSection.SuspendLayout()
         CType(Me.InterestPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel3.SuspendLayout()
-        Me.BlockAccountSection.SuspendLayout()
-        CType(Me.BlockAccountPic, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.FlowLayoutPanel4.SuspendLayout()
         Me.DisplayTransactionSection.SuspendLayout()
         Me.FlowLayoutPanel5.SuspendLayout()
         CType(Me.DisplayTransactionsPic, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,6 +71,13 @@ Partial Class AdminDashboard
         CType(Me.DisplayAccountsPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CreateAccountSection.SuspendLayout()
         CType(Me.CreateAccountPic, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
+        Me.ActiveAccountSection.SuspendLayout()
+        CType(Me.ActiveAccountPic, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel6.SuspendLayout()
+        Me.BlockAccountSection.SuspendLayout()
+        CType(Me.BlockAccountPic, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -79,11 +87,11 @@ Partial Class AdminDashboard
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel1.Controls.Add(Me.InterestSection, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.BlockAccountSection, 1, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.DisplayTransactionSection, 2, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.DeleteAccountSection, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.DisplayAccountsSection, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.CreateAccountSection, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel2, 1, 1)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -145,59 +153,6 @@ Partial Class AdminDashboard
         Me.Label8.Size = New System.Drawing.Size(122, 46)
         Me.Label8.TabIndex = 3
         Me.Label8.Text = "Fixer le taux d'intérêt"
-        '
-        'BlockAccountSection
-        '
-        Me.BlockAccountSection.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BlockAccountSection.Controls.Add(Me.Label11)
-        Me.BlockAccountSection.Controls.Add(Me.BlockAccountPic)
-        Me.BlockAccountSection.Controls.Add(Me.FlowLayoutPanel4)
-        Me.BlockAccountSection.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BlockAccountSection.Location = New System.Drawing.Point(257, 174)
-        Me.BlockAccountSection.Margin = New System.Windows.Forms.Padding(5)
-        Me.BlockAccountSection.Name = "BlockAccountSection"
-        Me.BlockAccountSection.Padding = New System.Windows.Forms.Padding(7)
-        Me.BlockAccountSection.Size = New System.Drawing.Size(242, 159)
-        Me.BlockAccountSection.TabIndex = 1
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Arial", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(17, 136)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(79, 23)
-        Me.Label11.TabIndex = 7
-        Me.Label11.Text = "Compte"
-        '
-        'BlockAccountPic
-        '
-        Me.BlockAccountPic.Location = New System.Drawing.Point(10, 41)
-        Me.BlockAccountPic.Name = "BlockAccountPic"
-        Me.BlockAccountPic.Size = New System.Drawing.Size(72, 72)
-        Me.BlockAccountPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.BlockAccountPic.TabIndex = 7
-        Me.BlockAccountPic.TabStop = False
-        '
-        'FlowLayoutPanel4
-        '
-        Me.FlowLayoutPanel4.Controls.Add(Me.Label9)
-        Me.FlowLayoutPanel4.Location = New System.Drawing.Point(120, 10)
-        Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
-        Me.FlowLayoutPanel4.Size = New System.Drawing.Size(112, 54)
-        Me.FlowLayoutPanel4.TabIndex = 7
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Arial", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(3, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(103, 46)
-        Me.Label9.TabIndex = 3
-        Me.Label9.Text = "Bloquer un compte"
         '
         'DisplayTransactionSection
         '
@@ -403,6 +358,100 @@ Partial Class AdminDashboard
         Me.CreateAccountPic.TabIndex = 0
         Me.CreateAccountPic.TabStop = False
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.ActiveAccountSection)
+        Me.Panel2.Controls.Add(Me.BlockAccountSection)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(257, 174)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(5)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Padding = New System.Windows.Forms.Padding(7)
+        Me.Panel2.Size = New System.Drawing.Size(242, 159)
+        Me.Panel2.TabIndex = 2
+        '
+        'ActiveAccountSection
+        '
+        Me.ActiveAccountSection.BackColor = System.Drawing.Color.GreenYellow
+        Me.ActiveAccountSection.Controls.Add(Me.ActiveAccountPic)
+        Me.ActiveAccountSection.Controls.Add(Me.FlowLayoutPanel6)
+        Me.ActiveAccountSection.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ActiveAccountSection.Location = New System.Drawing.Point(2, 81)
+        Me.ActiveAccountSection.Margin = New System.Windows.Forms.Padding(5)
+        Me.ActiveAccountSection.Name = "ActiveAccountSection"
+        Me.ActiveAccountSection.Padding = New System.Windows.Forms.Padding(7)
+        Me.ActiveAccountSection.Size = New System.Drawing.Size(242, 78)
+        Me.ActiveAccountSection.TabIndex = 8
+        '
+        'ActiveAccountPic
+        '
+        Me.ActiveAccountPic.Location = New System.Drawing.Point(184, 20)
+        Me.ActiveAccountPic.Name = "ActiveAccountPic"
+        Me.ActiveAccountPic.Size = New System.Drawing.Size(48, 48)
+        Me.ActiveAccountPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ActiveAccountPic.TabIndex = 7
+        Me.ActiveAccountPic.TabStop = False
+        '
+        'FlowLayoutPanel6
+        '
+        Me.FlowLayoutPanel6.Controls.Add(Me.Label14)
+        Me.FlowLayoutPanel6.Location = New System.Drawing.Point(8, 43)
+        Me.FlowLayoutPanel6.Name = "FlowLayoutPanel6"
+        Me.FlowLayoutPanel6.Size = New System.Drawing.Size(170, 25)
+        Me.FlowLayoutPanel6.TabIndex = 7
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Arial", 13.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label14.ForeColor = System.Drawing.Color.White
+        Me.Label14.Location = New System.Drawing.Point(3, 0)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(152, 21)
+        Me.Label14.TabIndex = 3
+        Me.Label14.Text = "Activer un compte"
+        '
+        'BlockAccountSection
+        '
+        Me.BlockAccountSection.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BlockAccountSection.Controls.Add(Me.BlockAccountPic)
+        Me.BlockAccountSection.Controls.Add(Me.FlowLayoutPanel4)
+        Me.BlockAccountSection.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BlockAccountSection.Location = New System.Drawing.Point(2, 2)
+        Me.BlockAccountSection.Margin = New System.Windows.Forms.Padding(5)
+        Me.BlockAccountSection.Name = "BlockAccountSection"
+        Me.BlockAccountSection.Padding = New System.Windows.Forms.Padding(7)
+        Me.BlockAccountSection.Size = New System.Drawing.Size(242, 78)
+        Me.BlockAccountSection.TabIndex = 2
+        '
+        'BlockAccountPic
+        '
+        Me.BlockAccountPic.Location = New System.Drawing.Point(8, 8)
+        Me.BlockAccountPic.Name = "BlockAccountPic"
+        Me.BlockAccountPic.Size = New System.Drawing.Size(48, 48)
+        Me.BlockAccountPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.BlockAccountPic.TabIndex = 7
+        Me.BlockAccountPic.TabStop = False
+        '
+        'FlowLayoutPanel4
+        '
+        Me.FlowLayoutPanel4.Controls.Add(Me.Label9)
+        Me.FlowLayoutPanel4.Location = New System.Drawing.Point(64, 8)
+        Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
+        Me.FlowLayoutPanel4.Size = New System.Drawing.Size(168, 26)
+        Me.FlowLayoutPanel4.TabIndex = 7
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Arial", 13.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(3, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(160, 21)
+        Me.Label9.TabIndex = 3
+        Me.Label9.Text = "Bloquer un compte"
+        '
         'AdminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -416,11 +465,6 @@ Partial Class AdminDashboard
         CType(Me.InterestPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel3.ResumeLayout(False)
         Me.FlowLayoutPanel3.PerformLayout()
-        Me.BlockAccountSection.ResumeLayout(False)
-        Me.BlockAccountSection.PerformLayout()
-        CType(Me.BlockAccountPic, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.FlowLayoutPanel4.ResumeLayout(False)
-        Me.FlowLayoutPanel4.PerformLayout()
         Me.DisplayTransactionSection.ResumeLayout(False)
         Me.DisplayTransactionSection.PerformLayout()
         Me.FlowLayoutPanel5.ResumeLayout(False)
@@ -439,6 +483,15 @@ Partial Class AdminDashboard
         Me.CreateAccountSection.ResumeLayout(False)
         Me.CreateAccountSection.PerformLayout()
         CType(Me.CreateAccountPic, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        Me.ActiveAccountSection.ResumeLayout(False)
+        CType(Me.ActiveAccountPic, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel6.ResumeLayout(False)
+        Me.FlowLayoutPanel6.PerformLayout()
+        Me.BlockAccountSection.ResumeLayout(False)
+        CType(Me.BlockAccountPic, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel4.ResumeLayout(False)
+        Me.FlowLayoutPanel4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -449,11 +502,6 @@ Partial Class AdminDashboard
     Friend WithEvents InterestPic As PictureBox
     Friend WithEvents FlowLayoutPanel3 As FlowLayoutPanel
     Friend WithEvents Label8 As Label
-    Friend WithEvents BlockAccountSection As Panel
-    Friend WithEvents Label11 As Label
-    Friend WithEvents BlockAccountPic As PictureBox
-    Friend WithEvents FlowLayoutPanel4 As FlowLayoutPanel
-    Friend WithEvents Label9 As Label
     Friend WithEvents DisplayTransactionSection As Panel
     Friend WithEvents Label12 As Label
     Friend WithEvents FlowLayoutPanel5 As FlowLayoutPanel
@@ -473,4 +521,13 @@ Partial Class AdminDashboard
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents CreateAccountPic As PictureBox
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents ActiveAccountSection As Panel
+    Friend WithEvents ActiveAccountPic As PictureBox
+    Friend WithEvents FlowLayoutPanel6 As FlowLayoutPanel
+    Friend WithEvents Label14 As Label
+    Friend WithEvents BlockAccountSection As Panel
+    Friend WithEvents BlockAccountPic As PictureBox
+    Friend WithEvents FlowLayoutPanel4 As FlowLayoutPanel
+    Friend WithEvents Label9 As Label
 End Class

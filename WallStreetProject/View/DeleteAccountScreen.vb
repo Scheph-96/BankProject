@@ -27,4 +27,14 @@
             MessageBox.Show(msg)
         End If
     End Sub
+
+    Private Sub AccountNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles AccountNumber.KeyPress
+        If Not (Asc(e.KeyChar) = 8) Then
+            Dim allowedChars As String = "1234567890." 'allowed In textbox
+            If Not allowedChars.Contains(e.KeyChar.ToString.ToLower) Then
+                'e.KeyChar = ChrW(0)
+                e.Handled = True
+            End If
+        End If
+    End Sub
 End Class

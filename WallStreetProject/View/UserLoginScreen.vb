@@ -41,7 +41,7 @@ Public Class UserLoginScreen
         ElseIf UsernameTextBox.Text = "" Or PasswordTextBox.Text = "" Then
             MessageBox.Show("Vous devez remplir tous les champs!")
         Else
-            errorMessage = controller.CustomerLogin(UsernameTextBox.Text, PasswordTextBox.Text, userDashBoard, Me)
+            'errorMessage = controller.CustomerLogin(UsernameTextBox.Text, PasswordTextBox.Text, userDashBoard, Me)
             If errorMessage IsNot "" Then
 
             End If

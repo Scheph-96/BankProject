@@ -111,14 +111,14 @@
         _transactions.Add(newWithdraw)
     End Sub
 
-    Public Sub transfer(amount As Double, target As Integer)
-        Me.AccountSolde = Me.AccountSolde - amount
-        Dim controller As New Controller()
-        Dim targetAccount As New Account()
+    'Public Sub transfer(amount As Double, target As Integer)
+    '    Me.AccountSolde = Me.AccountSolde - amount
+    '    Dim controller As New Controller()
+    '    Dim targetAccount As New Account()
 
-        controller.AccountByNumber(target)
-        targetAccount.AccountSolde = targetAccount.AccountSolde + amount
-        Dim newTransfer As New Transfer(Me, amount, target)
-        _transactions.Add(newTransfer)
-    End Sub
+    '    controller.AccountByNumber(target)
+    '    targetAccount.AccountSolde = targetAccount.AccountSolde + amount
+    '    Dim newTransfer As New Transfer(Me, amount, target)
+    '    _transactions.Add(newTransfer)
+    'End Sub
 End Class

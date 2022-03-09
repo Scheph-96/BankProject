@@ -64,3 +64,4 @@ P:\Source-Code\Git\BankProject\WallStreetProject\obj\Debug\net6.0-windows\WallSt
 P:\Source-Code\Git\BankProject\WallStreetProject\obj\Debug\net6.0-windows\WallStreetProject.SetAccountInterestScreen.resources
 P:\Source-Code\Git\BankProject\WallStreetProject\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 P:\Source-Code\Git\BankProject\WallStreetProject\obj\Debug\net6.0-windows\WallStreetProject.vbproj.CopyComplete
+P:\Source-Code\Git\BankProject\WallStreetProject\obj\Debug\net6.0-windows\WallStreetProject.ActiveAccountScreen.resources

@@ -4,6 +4,7 @@
     Private deleteAccountScreen As New DeleteAccountScreen
     Private interestScreen As New SetAccountInterestScreen
     Private blockAccountScreen As New BlockAccountScreen
+    Private activeAccountScreen As New ActiveAccountScreen
     Private displayTransactionsScreen As New DisplayTransactionsScreen
 
     Private Sub AdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -12,6 +13,7 @@
         DeleteAccountPic.Image = WallStreetProject.My.Resources.DeleteUserIcon
         InterestPic.Image = WallStreetProject.My.Resources.InterestIcon
         BlockAccountPic.Image = WallStreetProject.My.Resources.BlockUserIcon
+        ActiveAccountPic.Image = WallStreetProject.My.Resources.ActiveAccountPic
         DisplayTransactionsPic.Image = WallStreetProject.My.Resources.TransactionIcon
     End Sub
 
@@ -42,6 +44,11 @@
 
     Private Sub DisplayTransactionSection_Paint(sender As Object, e As MouseEventArgs) Handles DisplayTransactionSection.Click
         Parent.Controls.Add(displayTransactionsScreen)
+        Me.Dispose()
+    End Sub
+
+    Private Sub ActiveAccountSection_Paint(sender As Object, e As MouseEventArgs) Handles ActiveAccountSection.Click
+        Parent.Controls.Add(activeAccountScreen)
         Me.Dispose()
     End Sub
 End Class

@@ -1,5 +1,5 @@
-﻿Public Class BlockAccountScreen
-    Private Sub BlockAccount_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+﻿Public Class ActiveAccountScreen
+    Private Sub ActiveAccountScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         BackPic.Image = WallStreetProject.My.Resources.back_ico3
     End Sub
 
@@ -17,16 +17,17 @@
         Me.Dispose()
     End Sub
 
-    Public Sub ConfirmBlock_Click(sender As Object, e As EventArgs) Handles ConfirmBlock.Click
+    Private Sub ConfirmActive_Click(sender As Object, e As EventArgs) Handles ConfirmActive.Click
         Dim controller As New Controller
         Dim msg As String
         If AccountNumber.Text = "" Or AdminPassword.Text = "" Then
             MessageBox.Show("Veuillez renseigner tous les champs")
         Else
-            msg = controller.blockAccount(AccountNumber.Text, AdminPassword.Text)
+            msg = controller.activeAccount(AccountNumber.Text, AdminPassword.Text)
             MessageBox.Show(msg)
         End If
     End Sub
+
     Private Sub AccountNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles AccountNumber.KeyPress
         If Not (Asc(e.KeyChar) = 8) Then
             Dim allowedChars As String = "1234567890." 'allowed In textbox
@@ -36,5 +37,4 @@
             End If
         End If
     End Sub
-
 End Class
