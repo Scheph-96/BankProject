@@ -224,10 +224,9 @@ Partial Class TransferScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "TransferScreen"
-        Me.Size = New System.Drawing.Size(754, 325)
+        Me.Size = New System.Drawing.Size(758, 329)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

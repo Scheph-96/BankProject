@@ -38,7 +38,6 @@ Partial Class SoldeScreen
         '
         'Panel1
         '
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.TableLayoutPanel1)
         Me.Panel1.Controls.Add(Me.BackPic)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -55,12 +54,12 @@ Partial Class SoldeScreen
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Panel2, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 86)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 88)
         Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(754, 241)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(758, 241)
         Me.TableLayoutPanel1.TabIndex = 1
         '
         'Panel2
@@ -68,7 +67,7 @@ Partial Class SoldeScreen
         Me.Panel2.AutoSize = True
         Me.Panel2.Controls.Add(Me.TableLayoutPanel2)
         Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Location = New System.Drawing.Point(201, 3)
+        Me.Panel2.Location = New System.Drawing.Point(203, 3)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(352, 93)
         Me.Panel2.TabIndex = 3

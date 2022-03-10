@@ -4,6 +4,9 @@
     <Compile Update="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="View\AccountEditionScreen.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="View\ActiveAccountScreen.vb">
       <SubType>UserControl</SubType>
     </Compile>
@@ -36,6 +39,9 @@
     </Compile>
     <Compile Update="View\LoginScreen.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\PersonalTransactionScreen.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="View\SetAccountInterestScreen.vb">
       <SubType>UserControl</SubType>

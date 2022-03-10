@@ -24,14 +24,19 @@ Partial Class UserDashboardScreen
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuContainer = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.LogoutPic = New System.Windows.Forms.PictureBox()
         Me.UserFirstName = New System.Windows.Forms.Label()
         Me.UserLastName = New System.Windows.Forms.Label()
+        Me.InterestSection = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.LogoutPic, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.InterestSection.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -46,6 +51,8 @@ Partial Class UserDashboardScreen
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.InterestSection)
+        Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.MenuContainer)
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.LogoutPic)
@@ -55,6 +62,42 @@ Partial Class UserDashboardScreen
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(758, 415)
         Me.Panel2.TabIndex = 1
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label3.Location = New System.Drawing.Point(110, 0)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(28, 18)
+        Me.Label3.TabIndex = 11
+        Me.Label3.Text = "0.1"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label2.Location = New System.Drawing.Point(0, 0)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(110, 18)
+        Me.Label2.TabIndex = 10
+        Me.Label2.Text = "Taux d'intérêt:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label1.Location = New System.Drawing.Point(0, 42)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(80, 18)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "Username"
         '
         'MenuContainer
         '
@@ -104,12 +147,22 @@ Partial Class UserDashboardScreen
         Me.UserLastName.AutoSize = True
         Me.UserLastName.BackColor = System.Drawing.Color.Transparent
         Me.UserLastName.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.UserLastName.Location = New System.Drawing.Point(0, 0)
+        Me.UserLastName.Location = New System.Drawing.Point(0, 1)
         Me.UserLastName.Margin = New System.Windows.Forms.Padding(0)
         Me.UserLastName.Name = "UserLastName"
         Me.UserLastName.Size = New System.Drawing.Size(71, 18)
         Me.UserLastName.TabIndex = 2
         Me.UserLastName.Text = "lastname"
+        '
+        'InterestSection
+        '
+        Me.InterestSection.Controls.Add(Me.Label2)
+        Me.InterestSection.Controls.Add(Me.Label3)
+        Me.InterestSection.Location = New System.Drawing.Point(0, 61)
+        Me.InterestSection.Margin = New System.Windows.Forms.Padding(0)
+        Me.InterestSection.Name = "InterestSection"
+        Me.InterestSection.Size = New System.Drawing.Size(176, 23)
+        Me.InterestSection.TabIndex = 12
         '
         'UserDashboardScreen
         '
@@ -122,6 +175,8 @@ Partial Class UserDashboardScreen
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.LogoutPic, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.InterestSection.ResumeLayout(False)
+        Me.InterestSection.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -133,4 +188,8 @@ Partial Class UserDashboardScreen
     Friend WithEvents LogoutPic As PictureBox
     Friend WithEvents Label6 As Label
     Friend WithEvents MenuContainer As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents InterestSection As Panel
 End Class

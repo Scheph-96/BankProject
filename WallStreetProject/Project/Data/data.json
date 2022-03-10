@@ -33,6 +33,21 @@
                 "AccountTransactions": [],
                 "AccountCreationDate": "09/03/2022 00:44:56",
                 "AccountStatus": 0
+            },
+            {
+                "AccountNumber": 5,
+                "AccountOwner": {
+                    "CustomerLastName": "AMAVI",
+                    "CustomerFirstName": "Henoc",
+                    "CustomerPassword": "QDEyMzQ1Njc4OTBA",
+                    "CustomerUserName": "HenocAMAVI",
+                    "CustomerPhoneNumber": "70633792"
+                },
+                "AccountSolde": 0.0,
+                "AccountType": 0,
+                "AccountTransactions": [],
+                "AccountCreationDate": "09/03/2022 14:11:19",
+                "AccountStatus": 0
             }
         ]
     },
@@ -55,7 +70,7 @@
                 "AccountStatus": 0
             },
             {
-                "AccountInterest": 0.1,
+                "AccountInterest": 1.2,
                 "AccountNumber": 4,
                 "AccountOwner": {
                     "CustomerLastName": "Qwerty",

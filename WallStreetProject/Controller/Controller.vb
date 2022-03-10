@@ -7,9 +7,19 @@ Public Class Controller
     Private swBanque As StreamWriter
     Private srBanque As StreamReader
     Private myBanqueSerializer As JsonSerializer
-    Private loggedAccount As New Account()
+    Private _loggedAccount As New Account()
     Private hashedPassword As String = String.Empty
     Private errorMessage As String = String.Empty
+
+
+    Public Property LoggedAccount() As Account
+        Get
+            LoggedAccount = _loggedAccount
+        End Get
+        Set(value As Account)
+            _loggedAccount = value
+        End Set
+    End Property
 
     Sub New()
         'banque = ReadFile()
@@ -46,29 +56,43 @@ Public Class Controller
         'Return Nothing
     End Function
 
-    'Public Function CustomerLogin(username As String, password As String, userDashBoard As UserDashboardScreen, userLoginScreen As UserLoginScreen)
-    '    'banque = ReadFile()
-    '    Dim isFind As Boolean = True
-    '    For i As Integer = 0 To banque.BankAccounts.Count
-    '        If banque.BankAccounts(i).AccountOwner.CustomerUserName = username And banque.BankAccounts(i).AccountOwner.CustomerPassword = passwordHash(password) Then
-    '            'isFind = True
-    '            'loggedAccount = banque.BankAccounts(i)
-    '            userDashBoard.Owner = banque.BankAccounts(i)
-    '            userLoginScreen.Dispose()
-    '            userDashBoard.Show()
-    '            Exit For
-    '        Else
-    '            isFind = False
-    '            errorMessage = "Informations incorrecte"
-    '        End If
-    '    Next
+    Public Function CustomerLogin(username As String, password As String) As Dictionary(Of Boolean, String)
+        banque = ReadFile()
+        Dim isFind As Boolean = True
+        Dim resultMsg As New Dictionary(Of Boolean, String)
+        For i As Integer = 0 To banque.BankCheckingAccounts.Item("Checking").Count - 1
+            If banque.BankCheckingAccounts.Item("Checking")(i).AccountOwner.CustomerUserName = username And banque.BankCheckingAccounts.Item("Checking")(i).AccountOwner.CustomerPassword = passwordHash(password) Then
+                isFind = True
+                _loggedAccount = banque.BankCheckingAccounts.Item("Checking")(i)
+                Exit For
+            Else
+                isFind = False
+            End If
+        Next
 
-    '    If isFind Then
-    '        Return loggedAccount
-    '    Else
-    '        Return errorMessage
-    '    End If
-    'End Function
+        If isFind Then
+            resultMsg.Add(True, "Connexion Réussi")
+            Return resultMsg
+        Else
+            For i As Integer = 0 To banque.BankSavingAccounts.Item("Savings").Count - 1
+                If banque.BankSavingAccounts.Item("Savings")(i).AccountOwner.CustomerUserName = username And banque.BankSavingAccounts.Item("Savings")(i).AccountOwner.CustomerPassword = passwordHash(password) Then
+                    isFind = True
+                    _loggedAccount = banque.BankSavingAccounts.Item("Savings")(i)
+                    Exit For
+                Else
+                    isFind = False
+                End If
+            Next
+
+            If isFind Then
+                resultMsg.Add(True, "Connexion Réussi")
+                Return resultMsg
+            Else
+                resultMsg.Add(False, "Echec de connexion. Vérifiez les informations saisis")
+                Return resultMsg
+            End If
+        End If
+    End Function
 
     Public Function AdminLogin(adminName As String, password As String)
         banque = ReadFile()
@@ -241,7 +265,7 @@ Public Class Controller
         Dim isFind As Boolean = True
         If passwordHash(adminPassWord) = banque.Admin.AdminPassword Then
 
-            For i As Integer = 0 To banque.BankSavingAccounts.Count - 1
+            For i As Integer = 0 To banque.BankSavingAccounts.Item("Savings").Count - 1
                 If accountNumber = banque.BankSavingAccounts.Item("Savings")(i).AccountNumber Then
                     Dim savingAccount As New SavingsAccount(banque.BankSavingAccounts.Item("Savings")(i), newInterest)
                     banque.BankSavingAccounts.Item("Savings")(i) = savingAccount

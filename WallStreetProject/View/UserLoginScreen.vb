@@ -2,9 +2,9 @@
 Public Class UserLoginScreen
     Private _bank As New Bank()
     Private adminLoginScreen As New AdminLoginScreen
-    Private controller As New Controller()
     Private userDashBoard As New UserDashboardScreen
     Private errorMessage As String
+    Private form As New Form1()
 
     Private Sub UserLoginScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         UsernameErrorMessage.Visible = False
@@ -35,15 +35,19 @@ Public Class UserLoginScreen
     End Sub
 
     Private Sub LoginButton_Click(sender As Object, e As EventArgs) Handles LoginButton.Click
-
-        If UsernameTextBox.Text = "" And PasswordTextBox.Text = "" Then
-            MessageBox.Show("Vous devez remplir tous les champs!")
-        ElseIf UsernameTextBox.Text = "" Or PasswordTextBox.Text = "" Then
-            MessageBox.Show("Vous devez remplir tous les champs!")
+        Dim controller As New Controller()
+        Dim loginStatus As New Dictionary(Of Boolean, String)
+        If UsernameTextBox.Text = "" Or PasswordTextBox.Text = "" Then
+            MessageBox.Show("Veuillez remplir tous les champs!")
         Else
-            'errorMessage = controller.CustomerLogin(UsernameTextBox.Text, PasswordTextBox.Text, userDashBoard, Me)
-            If errorMessage IsNot "" Then
-
+            loginStatus = controller.CustomerLogin(UsernameTextBox.Text, PasswordTextBox.Text)
+            If loginStatus.ContainsKey(True) Then
+                Parent.Dispose()
+                form.IncomeRequest = "user"
+                form.LogAccount = controller.LoggedAccount
+                form.ShowDialog()
+            ElseIf loginStatus.ContainsKey(False) Then
+                MessageBox.Show(loginStatus.Values(0))
             End If
         End If
     End Sub

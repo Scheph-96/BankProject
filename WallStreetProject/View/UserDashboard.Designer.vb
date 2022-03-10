@@ -23,46 +23,65 @@ Partial Class UserDashboard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.MenuLayout = New System.Windows.Forms.TableLayoutPanel()
+        Me.TransactionSection = New System.Windows.Forms.Panel()
+        Me.FlowLayoutPanel6 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.EditionSection = New System.Windows.Forms.Panel()
+        Me.FlowLayoutPanel5 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.EditPic = New System.Windows.Forms.PictureBox()
         Me.TransferSection = New System.Windows.Forms.Panel()
+        Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.TransferPic = New System.Windows.Forms.PictureBox()
         Me.WithdrawalSection = New System.Windows.Forms.Panel()
+        Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.WithdrawalPic = New System.Windows.Forms.PictureBox()
         Me.DepositSection = New System.Windows.Forms.Panel()
+        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.DepositPic = New System.Windows.Forms.PictureBox()
         Me.SoldeSection = New System.Windows.Forms.Panel()
-        Me.SoldePic = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.SoldePic = New System.Windows.Forms.PictureBox()
+        Me.TransactionsPic = New System.Windows.Forms.PictureBox()
         Me.MenuLayout.SuspendLayout()
+        Me.TransactionSection.SuspendLayout()
+        Me.FlowLayoutPanel6.SuspendLayout()
+        Me.EditionSection.SuspendLayout()
+        Me.FlowLayoutPanel5.SuspendLayout()
+        CType(Me.EditPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TransferSection.SuspendLayout()
+        Me.FlowLayoutPanel4.SuspendLayout()
         CType(Me.TransferPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.WithdrawalSection.SuspendLayout()
+        Me.FlowLayoutPanel3.SuspendLayout()
         CType(Me.WithdrawalPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DepositSection.SuspendLayout()
+        Me.FlowLayoutPanel2.SuspendLayout()
         CType(Me.DepositPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SoldeSection.SuspendLayout()
-        CType(Me.SoldePic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel1.SuspendLayout()
-        Me.FlowLayoutPanel2.SuspendLayout()
-        Me.FlowLayoutPanel3.SuspendLayout()
-        Me.FlowLayoutPanel4.SuspendLayout()
+        CType(Me.SoldePic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TransactionsPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuLayout
         '
-        Me.MenuLayout.ColumnCount = 2
-        Me.MenuLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.MenuLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.MenuLayout.ColumnCount = 3
+        Me.MenuLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.MenuLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.MenuLayout.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.MenuLayout.Controls.Add(Me.TransactionSection, 2, 0)
+        Me.MenuLayout.Controls.Add(Me.EditionSection, 2, 1)
         Me.MenuLayout.Controls.Add(Me.TransferSection, 1, 1)
         Me.MenuLayout.Controls.Add(Me.WithdrawalSection, 0, 1)
         Me.MenuLayout.Controls.Add(Me.DepositSection, 1, 0)
@@ -76,6 +95,110 @@ Partial Class UserDashboard
         Me.MenuLayout.Size = New System.Drawing.Size(758, 329)
         Me.MenuLayout.TabIndex = 7
         '
+        'TransactionSection
+        '
+        Me.TransactionSection.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.TransactionSection.Controls.Add(Me.TransactionsPic)
+        Me.TransactionSection.Controls.Add(Me.FlowLayoutPanel6)
+        Me.TransactionSection.Controls.Add(Me.Label12)
+        Me.TransactionSection.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.TransactionSection.Location = New System.Drawing.Point(509, 5)
+        Me.TransactionSection.Margin = New System.Windows.Forms.Padding(5)
+        Me.TransactionSection.Name = "TransactionSection"
+        Me.TransactionSection.Padding = New System.Windows.Forms.Padding(7)
+        Me.TransactionSection.Size = New System.Drawing.Size(242, 154)
+        Me.TransactionSection.TabIndex = 12
+        '
+        'FlowLayoutPanel6
+        '
+        Me.FlowLayoutPanel6.Controls.Add(Me.Label11)
+        Me.FlowLayoutPanel6.Location = New System.Drawing.Point(88, 10)
+        Me.FlowLayoutPanel6.Name = "FlowLayoutPanel6"
+        Me.FlowLayoutPanel6.Size = New System.Drawing.Size(144, 78)
+        Me.FlowLayoutPanel6.TabIndex = 11
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(0, 0)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(138, 52)
+        Me.Label11.TabIndex = 9
+        Me.Label11.Text = "Liste des transactions"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.Location = New System.Drawing.Point(10, 121)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(133, 26)
+        Me.Label12.TabIndex = 10
+        Me.Label12.Text = "Transaction"
+        '
+        'EditionSection
+        '
+        Me.EditionSection.BackColor = System.Drawing.Color.OliveDrab
+        Me.EditionSection.Controls.Add(Me.FlowLayoutPanel5)
+        Me.EditionSection.Controls.Add(Me.Label10)
+        Me.EditionSection.Controls.Add(Me.EditPic)
+        Me.EditionSection.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.EditionSection.Location = New System.Drawing.Point(509, 169)
+        Me.EditionSection.Margin = New System.Windows.Forms.Padding(5)
+        Me.EditionSection.Name = "EditionSection"
+        Me.EditionSection.Padding = New System.Windows.Forms.Padding(7)
+        Me.EditionSection.Size = New System.Drawing.Size(242, 155)
+        Me.EditionSection.TabIndex = 13
+        '
+        'FlowLayoutPanel5
+        '
+        Me.FlowLayoutPanel5.Controls.Add(Me.Label9)
+        Me.FlowLayoutPanel5.Location = New System.Drawing.Point(85, 10)
+        Me.FlowLayoutPanel5.Name = "FlowLayoutPanel5"
+        Me.FlowLayoutPanel5.Size = New System.Drawing.Size(147, 79)
+        Me.FlowLayoutPanel5.TabIndex = 12
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(0, 0)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(145, 78)
+        Me.Label9.TabIndex = 8
+        Me.Label9.Text = "Modifier les informations utlisateurs"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(10, 122)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(92, 26)
+        Me.Label10.TabIndex = 11
+        Me.Label10.Text = "Modifier"
+        '
+        'EditPic
+        '
+        Me.EditPic.Location = New System.Drawing.Point(10, 36)
+        Me.EditPic.Name = "EditPic"
+        Me.EditPic.Size = New System.Drawing.Size(72, 72)
+        Me.EditPic.TabIndex = 10
+        Me.EditPic.TabStop = False
+        '
         'TransferSection
         '
         Me.TransferSection.BackColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(39, Byte), Integer))
@@ -83,12 +206,20 @@ Partial Class UserDashboard
         Me.TransferSection.Controls.Add(Me.Label8)
         Me.TransferSection.Controls.Add(Me.TransferPic)
         Me.TransferSection.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.TransferSection.Location = New System.Drawing.Point(384, 169)
+        Me.TransferSection.Location = New System.Drawing.Point(257, 169)
         Me.TransferSection.Margin = New System.Windows.Forms.Padding(5)
         Me.TransferSection.Name = "TransferSection"
         Me.TransferSection.Padding = New System.Windows.Forms.Padding(7)
-        Me.TransferSection.Size = New System.Drawing.Size(369, 155)
+        Me.TransferSection.Size = New System.Drawing.Size(242, 155)
         Me.TransferSection.TabIndex = 6
+        '
+        'FlowLayoutPanel4
+        '
+        Me.FlowLayoutPanel4.Controls.Add(Me.Label3)
+        Me.FlowLayoutPanel4.Location = New System.Drawing.Point(97, 10)
+        Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
+        Me.FlowLayoutPanel4.Size = New System.Drawing.Size(135, 79)
+        Me.FlowLayoutPanel4.TabIndex = 12
         '
         'Label3
         '
@@ -102,6 +233,19 @@ Partial Class UserDashboard
         Me.Label3.Size = New System.Drawing.Size(130, 52)
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Effectuer un transfert"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(10, 122)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(105, 26)
+        Me.Label8.TabIndex = 11
+        Me.Label8.Text = "Transfert"
         '
         'TransferPic
         '
@@ -122,8 +266,16 @@ Partial Class UserDashboard
         Me.WithdrawalSection.Margin = New System.Windows.Forms.Padding(5)
         Me.WithdrawalSection.Name = "WithdrawalSection"
         Me.WithdrawalSection.Padding = New System.Windows.Forms.Padding(7)
-        Me.WithdrawalSection.Size = New System.Drawing.Size(369, 155)
+        Me.WithdrawalSection.Size = New System.Drawing.Size(242, 155)
         Me.WithdrawalSection.TabIndex = 6
+        '
+        'FlowLayoutPanel3
+        '
+        Me.FlowLayoutPanel3.Controls.Add(Me.Label5)
+        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(125, 10)
+        Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
+        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(107, 82)
+        Me.FlowLayoutPanel3.TabIndex = 11
         '
         'Label5
         '
@@ -137,6 +289,19 @@ Partial Class UserDashboard
         Me.Label5.Size = New System.Drawing.Size(105, 52)
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "Effectuer un retrait"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(10, 122)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(79, 26)
+        Me.Label7.TabIndex = 10
+        Me.Label7.Text = "Retrait"
         '
         'WithdrawalPic
         '
@@ -153,12 +318,20 @@ Partial Class UserDashboard
         Me.DepositSection.Controls.Add(Me.Label6)
         Me.DepositSection.Controls.Add(Me.DepositPic)
         Me.DepositSection.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DepositSection.Location = New System.Drawing.Point(384, 5)
+        Me.DepositSection.Location = New System.Drawing.Point(257, 5)
         Me.DepositSection.Margin = New System.Windows.Forms.Padding(5)
         Me.DepositSection.Name = "DepositSection"
         Me.DepositSection.Padding = New System.Windows.Forms.Padding(7)
-        Me.DepositSection.Size = New System.Drawing.Size(369, 154)
+        Me.DepositSection.Size = New System.Drawing.Size(242, 154)
         Me.DepositSection.TabIndex = 1
+        '
+        'FlowLayoutPanel2
+        '
+        Me.FlowLayoutPanel2.Controls.Add(Me.Label4)
+        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(124, 10)
+        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(108, 78)
+        Me.FlowLayoutPanel2.TabIndex = 11
         '
         'Label4
         '
@@ -172,6 +345,19 @@ Partial Class UserDashboard
         Me.Label4.Size = New System.Drawing.Size(105, 52)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Effectuer un dépôt"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(10, 121)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(73, 26)
+        Me.Label6.TabIndex = 10
+        Me.Label6.Text = "Dépôt"
         '
         'DepositPic
         '
@@ -192,34 +378,13 @@ Partial Class UserDashboard
         Me.SoldeSection.Margin = New System.Windows.Forms.Padding(5)
         Me.SoldeSection.Name = "SoldeSection"
         Me.SoldeSection.Padding = New System.Windows.Forms.Padding(7)
-        Me.SoldeSection.Size = New System.Drawing.Size(369, 154)
+        Me.SoldeSection.Size = New System.Drawing.Size(242, 154)
         Me.SoldeSection.TabIndex = 2
-        '
-        'SoldePic
-        '
-        Me.SoldePic.Location = New System.Drawing.Point(10, 36)
-        Me.SoldePic.Name = "SoldePic"
-        Me.SoldePic.Size = New System.Drawing.Size(72, 72)
-        Me.SoldePic.TabIndex = 7
-        Me.SoldePic.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(10, 121)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(70, 26)
-        Me.Label1.TabIndex = 8
-        Me.Label1.Text = "Solde"
         '
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.Controls.Add(Me.Label2)
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(240, 10)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(113, 10)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(119, 82)
         Me.FlowLayoutPanel1.TabIndex = 9
@@ -237,68 +402,35 @@ Partial Class UserDashboard
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "Consulter votre solde"
         '
-        'Label6
+        'Label1
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(10, 121)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(73, 26)
-        Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Dépôt"
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(10, 121)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(70, 26)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "Solde"
         '
-        'FlowLayoutPanel2
+        'SoldePic
         '
-        Me.FlowLayoutPanel2.Controls.Add(Me.Label4)
-        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(251, 10)
-        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
-        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(108, 78)
-        Me.FlowLayoutPanel2.TabIndex = 11
+        Me.SoldePic.Location = New System.Drawing.Point(10, 36)
+        Me.SoldePic.Name = "SoldePic"
+        Me.SoldePic.Size = New System.Drawing.Size(72, 72)
+        Me.SoldePic.TabIndex = 7
+        Me.SoldePic.TabStop = False
         '
-        'Label7
+        'TransactionsPic
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(7, 119)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(79, 26)
-        Me.Label7.TabIndex = 10
-        Me.Label7.Text = "Retrait"
-        '
-        'FlowLayoutPanel3
-        '
-        Me.FlowLayoutPanel3.Controls.Add(Me.Label5)
-        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(250, 7)
-        Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
-        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(107, 82)
-        Me.FlowLayoutPanel3.TabIndex = 11
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(10, 122)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(105, 26)
-        Me.Label8.TabIndex = 11
-        Me.Label8.Text = "Transfert"
-        '
-        'FlowLayoutPanel4
-        '
-        Me.FlowLayoutPanel4.Controls.Add(Me.Label3)
-        Me.FlowLayoutPanel4.Location = New System.Drawing.Point(224, 10)
-        Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
-        Me.FlowLayoutPanel4.Size = New System.Drawing.Size(135, 79)
-        Me.FlowLayoutPanel4.TabIndex = 12
+        Me.TransactionsPic.Location = New System.Drawing.Point(10, 36)
+        Me.TransactionsPic.Name = "TransactionsPic"
+        Me.TransactionsPic.Size = New System.Drawing.Size(72, 72)
+        Me.TransactionsPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.TransactionsPic.TabIndex = 12
+        Me.TransactionsPic.TabStop = False
         '
         'UserDashboard
         '
@@ -308,26 +440,36 @@ Partial Class UserDashboard
         Me.Name = "UserDashboard"
         Me.Size = New System.Drawing.Size(758, 329)
         Me.MenuLayout.ResumeLayout(False)
+        Me.TransactionSection.ResumeLayout(False)
+        Me.TransactionSection.PerformLayout()
+        Me.FlowLayoutPanel6.ResumeLayout(False)
+        Me.FlowLayoutPanel6.PerformLayout()
+        Me.EditionSection.ResumeLayout(False)
+        Me.EditionSection.PerformLayout()
+        Me.FlowLayoutPanel5.ResumeLayout(False)
+        Me.FlowLayoutPanel5.PerformLayout()
+        CType(Me.EditPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TransferSection.ResumeLayout(False)
         Me.TransferSection.PerformLayout()
+        Me.FlowLayoutPanel4.ResumeLayout(False)
+        Me.FlowLayoutPanel4.PerformLayout()
         CType(Me.TransferPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.WithdrawalSection.ResumeLayout(False)
         Me.WithdrawalSection.PerformLayout()
+        Me.FlowLayoutPanel3.ResumeLayout(False)
+        Me.FlowLayoutPanel3.PerformLayout()
         CType(Me.WithdrawalPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DepositSection.ResumeLayout(False)
         Me.DepositSection.PerformLayout()
+        Me.FlowLayoutPanel2.ResumeLayout(False)
+        Me.FlowLayoutPanel2.PerformLayout()
         CType(Me.DepositPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SoldeSection.ResumeLayout(False)
         Me.SoldeSection.PerformLayout()
-        CType(Me.SoldePic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel1.ResumeLayout(False)
         Me.FlowLayoutPanel1.PerformLayout()
-        Me.FlowLayoutPanel2.ResumeLayout(False)
-        Me.FlowLayoutPanel2.PerformLayout()
-        Me.FlowLayoutPanel3.ResumeLayout(False)
-        Me.FlowLayoutPanel3.PerformLayout()
-        Me.FlowLayoutPanel4.ResumeLayout(False)
-        Me.FlowLayoutPanel4.PerformLayout()
+        CType(Me.SoldePic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TransactionsPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -353,4 +495,14 @@ Partial Class UserDashboard
     Friend WithEvents Label6 As Label
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents Label2 As Label
+    Friend WithEvents TransactionSection As Panel
+    Friend WithEvents FlowLayoutPanel6 As FlowLayoutPanel
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents EditionSection As Panel
+    Friend WithEvents FlowLayoutPanel5 As FlowLayoutPanel
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents EditPic As PictureBox
+    Friend WithEvents TransactionsPic As PictureBox
 End Class
