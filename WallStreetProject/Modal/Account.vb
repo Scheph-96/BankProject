@@ -3,7 +3,9 @@
     Private _customer As New Customer()
     Private _solde As Double = 0.0
     Private _type As AccountsType
-    Private _transactions As New List(Of Transaction)()
+    Private _deposits As New Dictionary(Of String, List(Of Deposit)) From {{"Deposits", New List(Of Deposit)}}
+    Private _withdrawals As New Dictionary(Of String, List(Of Withdrawal)) From {{"Withdrawals", New List(Of Withdrawal)}}
+    Private _transfers As New Dictionary(Of String, List(Of Transfer)) From {{"Transfers", New List(Of Transfer)}}
     Private _dateCreation As String
     Private _status As AccountStatus
 
@@ -25,7 +27,9 @@
         _customer = account.AccountOwner
         _solde = account.AccountSolde
         _type = account.AccountType
-        _transactions = account.AccountTransactions
+        _deposits = account.AccountDeposits
+        _withdrawals = account.AccountWithdrawals
+        _transfers = account.AccountTranfers
         _dateCreation = account.AccountCreationDate
         _status = account.AccountStatus
     End Sub
@@ -69,12 +73,30 @@
         End Set
     End Property
 
-    Public Property AccountTransactions() As List(Of Transaction)
+    Public Property AccountDeposits() As Dictionary(Of String, List(Of Deposit))
         Get
-            AccountTransactions = _transactions
+            AccountDeposits = _deposits
         End Get
-        Set(value As List(Of Transaction))
-            _transactions = value
+        Set(value As Dictionary(Of String, List(Of Deposit)))
+            _deposits = value
+        End Set
+    End Property
+
+    Public Property AccountWithdrawals() As Dictionary(Of String, List(Of Withdrawal))
+        Get
+            AccountWithdrawals = _withdrawals
+        End Get
+        Set(value As Dictionary(Of String, List(Of Withdrawal)))
+            _withdrawals = value
+        End Set
+    End Property
+
+    Public Property AccountTranfers() As Dictionary(Of String, List(Of Transfer))
+        Get
+            AccountTranfers = _transfers
+        End Get
+        Set(value As Dictionary(Of String, List(Of Transfer)))
+            _transfers = value
         End Set
     End Property
 
@@ -96,29 +118,26 @@
         End Set
     End Property
 
-    Public Sub deposit(amount As Double)
-        Me.AccountSolde = amount
+    Public Sub Deposit(amount As Double)
+        _solde = amount
         Dim newDeposit As New Deposit(Me, amount)
-        _transactions.Add(newDeposit)
-        'Return newDeposit
-        'banque.BankTransactions.Add(newDeposit)
-        'WriteInFile(banque)
+        _deposits.Item("Deposits").Add(newDeposit)
     End Sub
 
-    Public Sub withdraw(amount As Double)
-        Me.AccountSolde = amount
+    Public Sub Withdraw(amount As Double)
+        _solde -= amount
         Dim newWithdraw As New Withdrawal(Me, amount)
-        _transactions.Add(newWithdraw)
+        _withdrawals.Item("Withdrawals").Add(newWithdraw)
     End Sub
 
-    'Public Sub transfer(amount As Double, target As Integer)
-    '    Me.AccountSolde = Me.AccountSolde - amount
-    '    Dim controller As New Controller()
-    '    Dim targetAccount As New Account()
+    Public Sub transfer(amount As Double, target As Integer)
+        _solde -= amount
+        Dim controller As New Controller()
+        Dim targetAccount As New Account()
 
-    '    controller.AccountByNumber(target)
-    '    targetAccount.AccountSolde = targetAccount.AccountSolde + amount
-    '    Dim newTransfer As New Transfer(Me, amount, target)
-    '    _transactions.Add(newTransfer)
-    'End Sub
+        controller.AccountByNumber(target)
+        targetAccount.AccountSolde = targetAccount.AccountSolde + amount
+        Dim newTransfer As New Transfer(Me, amount, target)
+        _transactions.Add(newTransfer)
+    End Sub
 End Class

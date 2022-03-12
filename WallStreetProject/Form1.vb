@@ -2,15 +2,26 @@
     Private userDashborad As New UserDashboardScreen
     Private adminDashboard As New AdminDashboardScreen
     Private _incomeRequest As String
-    Private _logAccount As Account
+    Private _logSavingAccount As New SavingsAccount
+    Private _logCheckingAccount As New CheckingAccount
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
+        Me.FormBorderStyle = FormBorderStyle.FixedSingle
+        Me.MinimizeBox = False
+        Me.MaximizeBox = False
+        Me.Icon = WallStreetProject.My.Resources.Bank_icon
         'Me.Controls.Add(adminDashboard)
         If _incomeRequest = "admin" Then
             Me.Controls.Add(adminDashboard)
         ElseIf _incomeRequest = "user" Then
-            Me.Controls.Add(userDashborad)
+            If _logCheckingAccount.AccountCreationDate <> Nothing Then
+                userDashborad.CheckingAccount = _logCheckingAccount
+                Me.Controls.Add(userDashborad)
+            ElseIf _logSavingAccount.AccountCreationDate <> Nothing Then
+                userDashborad.SavingAccount = _logSavingAccount
+                Me.Controls.Add(userDashborad)
+            End If
         End If
     End Sub
 
@@ -23,12 +34,21 @@
         End Set
     End Property
 
-    Public Property LogAccount() As Account
+    Public Property LogSavingAccount() As SavingsAccount
         Get
-            LogAccount = _logAccount
+            LogSavingAccount = _logSavingAccount
         End Get
-        Set(value As Account)
-            _logAccount = value
+        Set(value As SavingsAccount)
+            _logSavingAccount = value
+        End Set
+    End Property
+
+    Public Property LogCheckingAccount() As CheckingAccount
+        Get
+            LogCheckingAccount = _logCheckingAccount
+        End Get
+        Set(value As CheckingAccount)
+            _logCheckingAccount = value
         End Set
     End Property
 End Class

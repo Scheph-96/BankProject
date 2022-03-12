@@ -9,8 +9,8 @@
                 "AccountOwner": {
                     "CustomerLastName": "N'DJAMBARA",
                     "CustomerFirstName": "Omorou",
-                    "CustomerPassword": "QDEyMzQ1Njc4OTBA",
-                    "CustomerUserName": "OmorouN'DJAMBARA",
+                    "CustomerPassword": "TGV0RmxpcDIx",
+                    "CustomerUserName": "Scheph",
                     "CustomerPhoneNumber": "+228 98960193"
                 },
                 "AccountSolde": 0.0,
@@ -60,7 +60,7 @@
                     "CustomerLastName": "Azerty",
                     "CustomerFirstName": "Qwerty",
                     "CustomerPassword": "QDEyMzQ1Njc4OTBA",
-                    "CustomerUserName": "QwertyAzerty",
+                    "CustomerUserName": "QwertzA",
                     "CustomerPhoneNumber": "+228 98764433"
                 },
                 "AccountSolde": 0.0,
@@ -76,7 +76,7 @@
                     "CustomerLastName": "Qwerty",
                     "CustomerFirstName": "Azerty",
                     "CustomerPassword": "QDEyMzQ1Njc4OTBA",
-                    "CustomerUserName": "AzertyQwerty",
+                    "CustomerUserName": "AzertQ",
                     "CustomerPhoneNumber": "+228 98675433"
                 },
                 "AccountSolde": 0.0,
@@ -87,7 +87,15 @@
             }
         ]
     },
-    "BankTransactions": [],
+    "BankDeposits": {
+        "Deposits": []
+    },
+    "BankWithdrawals": {
+        "Withdrawals": []
+    },
+    "BankTranfers": {
+        "Transfers": []
+    },
     "Admin": {
         "AdminName": "Scheph",
         "AdminPassword": "YWRtaW5QYXNzV29yZA=="

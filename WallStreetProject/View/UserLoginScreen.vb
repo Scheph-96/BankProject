@@ -1,5 +1,4 @@
-﻿Imports System.Diagnostics
-Public Class UserLoginScreen
+﻿Public Class UserLoginScreen
     Private _bank As New Bank()
     Private adminLoginScreen As New AdminLoginScreen
     Private userDashBoard As New UserDashboardScreen
@@ -44,10 +43,16 @@ Public Class UserLoginScreen
             If loginStatus.ContainsKey(True) Then
                 Parent.Dispose()
                 form.IncomeRequest = "user"
-                form.LogAccount = controller.LoggedAccount
-                form.ShowDialog()
+                If controller.LoggedCheckingAccount.AccountCreationDate <> Nothing Then
+                    form.LogCheckingAccount = controller.LoggedCheckingAccount
+                    form.ShowDialog()
+                ElseIf controller.LoggedSavingAccount.AccountCreationDate <> Nothing Then
+                    form.LogSavingAccount = controller.LoggedSavingAccount
+                    form.ShowDialog()
+                End If
+
             ElseIf loginStatus.ContainsKey(False) Then
-                MessageBox.Show(loginStatus.Values(0))
+                    MessageBox.Show(loginStatus.Values(0))
             End If
         End If
     End Sub

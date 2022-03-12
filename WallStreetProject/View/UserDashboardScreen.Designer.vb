@@ -24,19 +24,24 @@ Partial Class UserDashboardScreen
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.InterestSection = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.InterestValue = New System.Windows.Forms.Label()
+        Me.UserName = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.UserLastName = New System.Windows.Forms.Label()
+        Me.UserFirstName = New System.Windows.Forms.Label()
         Me.MenuContainer = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.LogoutPic = New System.Windows.Forms.PictureBox()
-        Me.UserFirstName = New System.Windows.Forms.Label()
-        Me.UserLastName = New System.Windows.Forms.Label()
-        Me.InterestSection = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.LogoutPic, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         Me.InterestSection.SuspendLayout()
+        CType(Me.LogoutPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -51,29 +56,51 @@ Partial Class UserDashboardScreen
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.InterestSection)
-        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Controls.Add(Me.MenuContainer)
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.LogoutPic)
-        Me.Panel2.Controls.Add(Me.UserFirstName)
-        Me.Panel2.Controls.Add(Me.UserLastName)
         Me.Panel2.Location = New System.Drawing.Point(13, 13)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(758, 415)
         Me.Panel2.TabIndex = 1
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.Label3)
+        Me.Panel3.Controls.Add(Me.InterestSection)
+        Me.Panel3.Controls.Add(Me.UserName)
+        Me.Panel3.Controls.Add(Me.Label4)
+        Me.Panel3.Controls.Add(Me.Label5)
+        Me.Panel3.Controls.Add(Me.UserLastName)
+        Me.Panel3.Controls.Add(Me.UserFirstName)
+        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(510, 86)
+        Me.Panel3.TabIndex = 0
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.Location = New System.Drawing.Point(110, 0)
+        Me.Label3.Location = New System.Drawing.Point(0, 42)
         Me.Label3.Margin = New System.Windows.Forms.Padding(0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(28, 18)
-        Me.Label3.TabIndex = 11
-        Me.Label3.Text = "0.1"
+        Me.Label3.Size = New System.Drawing.Size(132, 18)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "Nom d'utilisateur:"
+        '
+        'InterestSection
+        '
+        Me.InterestSection.Controls.Add(Me.Label2)
+        Me.InterestSection.Controls.Add(Me.InterestValue)
+        Me.InterestSection.Location = New System.Drawing.Point(0, 62)
+        Me.InterestSection.Margin = New System.Windows.Forms.Padding(0)
+        Me.InterestSection.Name = "InterestSection"
+        Me.InterestSection.Size = New System.Drawing.Size(176, 23)
+        Me.InterestSection.TabIndex = 12
         '
         'Label2
         '
@@ -87,17 +114,77 @@ Partial Class UserDashboardScreen
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "Taux d'intérêt:"
         '
-        'Label1
+        'InterestValue
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(0, 42)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(80, 18)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Username"
+        Me.InterestValue.AutoSize = True
+        Me.InterestValue.BackColor = System.Drawing.Color.Transparent
+        Me.InterestValue.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.InterestValue.Location = New System.Drawing.Point(110, 0)
+        Me.InterestValue.Margin = New System.Windows.Forms.Padding(0)
+        Me.InterestValue.Name = "InterestValue"
+        Me.InterestValue.Size = New System.Drawing.Size(28, 18)
+        Me.InterestValue.TabIndex = 11
+        Me.InterestValue.Text = "0.1"
+        '
+        'UserName
+        '
+        Me.UserName.AutoSize = True
+        Me.UserName.BackColor = System.Drawing.Color.Transparent
+        Me.UserName.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.UserName.Location = New System.Drawing.Point(132, 42)
+        Me.UserName.Margin = New System.Windows.Forms.Padding(0)
+        Me.UserName.Name = "UserName"
+        Me.UserName.Size = New System.Drawing.Size(80, 18)
+        Me.UserName.TabIndex = 9
+        Me.UserName.Text = "Username"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label4.Location = New System.Drawing.Point(0, 22)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(75, 18)
+        Me.Label4.TabIndex = 14
+        Me.Label4.Text = "Prénoms:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label5.Location = New System.Drawing.Point(0, 3)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(44, 18)
+        Me.Label5.TabIndex = 13
+        Me.Label5.Text = "Nom:"
+        '
+        'UserLastName
+        '
+        Me.UserLastName.AutoSize = True
+        Me.UserLastName.BackColor = System.Drawing.Color.Transparent
+        Me.UserLastName.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.UserLastName.Location = New System.Drawing.Point(44, 3)
+        Me.UserLastName.Margin = New System.Windows.Forms.Padding(0)
+        Me.UserLastName.Name = "UserLastName"
+        Me.UserLastName.Size = New System.Drawing.Size(71, 18)
+        Me.UserLastName.TabIndex = 2
+        Me.UserLastName.Text = "lastname"
+        '
+        'UserFirstName
+        '
+        Me.UserFirstName.AutoSize = True
+        Me.UserFirstName.BackColor = System.Drawing.Color.Transparent
+        Me.UserFirstName.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.UserFirstName.Location = New System.Drawing.Point(75, 22)
+        Me.UserFirstName.Margin = New System.Windows.Forms.Padding(0)
+        Me.UserFirstName.Name = "UserFirstName"
+        Me.UserFirstName.Size = New System.Drawing.Size(74, 18)
+        Me.UserFirstName.TabIndex = 4
+        Me.UserFirstName.Text = "firstname"
         '
         'MenuContainer
         '
@@ -130,40 +217,6 @@ Partial Class UserDashboardScreen
         Me.LogoutPic.TabIndex = 6
         Me.LogoutPic.TabStop = False
         '
-        'UserFirstName
-        '
-        Me.UserFirstName.AutoSize = True
-        Me.UserFirstName.BackColor = System.Drawing.Color.Transparent
-        Me.UserFirstName.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.UserFirstName.Location = New System.Drawing.Point(0, 22)
-        Me.UserFirstName.Margin = New System.Windows.Forms.Padding(0)
-        Me.UserFirstName.Name = "UserFirstName"
-        Me.UserFirstName.Size = New System.Drawing.Size(74, 18)
-        Me.UserFirstName.TabIndex = 4
-        Me.UserFirstName.Text = "firstname"
-        '
-        'UserLastName
-        '
-        Me.UserLastName.AutoSize = True
-        Me.UserLastName.BackColor = System.Drawing.Color.Transparent
-        Me.UserLastName.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.UserLastName.Location = New System.Drawing.Point(0, 1)
-        Me.UserLastName.Margin = New System.Windows.Forms.Padding(0)
-        Me.UserLastName.Name = "UserLastName"
-        Me.UserLastName.Size = New System.Drawing.Size(71, 18)
-        Me.UserLastName.TabIndex = 2
-        Me.UserLastName.Text = "lastname"
-        '
-        'InterestSection
-        '
-        Me.InterestSection.Controls.Add(Me.Label2)
-        Me.InterestSection.Controls.Add(Me.Label3)
-        Me.InterestSection.Location = New System.Drawing.Point(0, 61)
-        Me.InterestSection.Margin = New System.Windows.Forms.Padding(0)
-        Me.InterestSection.Name = "InterestSection"
-        Me.InterestSection.Size = New System.Drawing.Size(176, 23)
-        Me.InterestSection.TabIndex = 12
-        '
         'UserDashboardScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -174,9 +227,11 @@ Partial Class UserDashboardScreen
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.LogoutPic, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.InterestSection.ResumeLayout(False)
         Me.InterestSection.PerformLayout()
+        CType(Me.LogoutPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -188,8 +243,12 @@ Partial Class UserDashboardScreen
     Friend WithEvents LogoutPic As PictureBox
     Friend WithEvents Label6 As Label
     Friend WithEvents MenuContainer As Panel
-    Friend WithEvents Label3 As Label
+    Friend WithEvents InterestValue As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents UserName As Label
     Friend WithEvents InterestSection As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
 End Class

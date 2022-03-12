@@ -24,6 +24,7 @@ Partial Class UserDashboard
     Private Sub InitializeComponent()
         Me.MenuLayout = New System.Windows.Forms.TableLayoutPanel()
         Me.TransactionSection = New System.Windows.Forms.Panel()
+        Me.TransactionsPic = New System.Windows.Forms.PictureBox()
         Me.FlowLayoutPanel6 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -52,9 +53,9 @@ Partial Class UserDashboard
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SoldePic = New System.Windows.Forms.PictureBox()
-        Me.TransactionsPic = New System.Windows.Forms.PictureBox()
         Me.MenuLayout.SuspendLayout()
         Me.TransactionSection.SuspendLayout()
+        CType(Me.TransactionsPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel6.SuspendLayout()
         Me.EditionSection.SuspendLayout()
         Me.FlowLayoutPanel5.SuspendLayout()
@@ -71,7 +72,6 @@ Partial Class UserDashboard
         Me.SoldeSection.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         CType(Me.SoldePic, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TransactionsPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuLayout
@@ -108,6 +108,15 @@ Partial Class UserDashboard
         Me.TransactionSection.Padding = New System.Windows.Forms.Padding(7)
         Me.TransactionSection.Size = New System.Drawing.Size(242, 154)
         Me.TransactionSection.TabIndex = 12
+        '
+        'TransactionsPic
+        '
+        Me.TransactionsPic.Location = New System.Drawing.Point(10, 36)
+        Me.TransactionsPic.Name = "TransactionsPic"
+        Me.TransactionsPic.Size = New System.Drawing.Size(72, 72)
+        Me.TransactionsPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.TransactionsPic.TabIndex = 12
+        Me.TransactionsPic.TabStop = False
         '
         'FlowLayoutPanel6
         '
@@ -369,7 +378,7 @@ Partial Class UserDashboard
         '
         'SoldeSection
         '
-        Me.SoldeSection.BackColor = System.Drawing.Color.GreenYellow
+        Me.SoldeSection.BackColor = System.Drawing.Color.YellowGreen
         Me.SoldeSection.Controls.Add(Me.FlowLayoutPanel1)
         Me.SoldeSection.Controls.Add(Me.Label1)
         Me.SoldeSection.Controls.Add(Me.SoldePic)
@@ -423,15 +432,6 @@ Partial Class UserDashboard
         Me.SoldePic.TabIndex = 7
         Me.SoldePic.TabStop = False
         '
-        'TransactionsPic
-        '
-        Me.TransactionsPic.Location = New System.Drawing.Point(10, 36)
-        Me.TransactionsPic.Name = "TransactionsPic"
-        Me.TransactionsPic.Size = New System.Drawing.Size(72, 72)
-        Me.TransactionsPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.TransactionsPic.TabIndex = 12
-        Me.TransactionsPic.TabStop = False
-        '
         'UserDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -442,6 +442,7 @@ Partial Class UserDashboard
         Me.MenuLayout.ResumeLayout(False)
         Me.TransactionSection.ResumeLayout(False)
         Me.TransactionSection.PerformLayout()
+        CType(Me.TransactionsPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel6.ResumeLayout(False)
         Me.FlowLayoutPanel6.PerformLayout()
         Me.EditionSection.ResumeLayout(False)
@@ -469,7 +470,6 @@ Partial Class UserDashboard
         Me.FlowLayoutPanel1.ResumeLayout(False)
         Me.FlowLayoutPanel1.PerformLayout()
         CType(Me.SoldePic, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TransactionsPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

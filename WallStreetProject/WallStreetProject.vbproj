@@ -6,7 +6,7 @@
     <StartupObject>WallStreetProject.MyMain</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
-    <ApplicationIcon>img\Bank_icon-icons.com_74914.ico</ApplicationIcon>
+    <ApplicationIcon>img\Bank_icon-icons.ico</ApplicationIcon>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
 

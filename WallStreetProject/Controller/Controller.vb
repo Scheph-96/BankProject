@@ -2,22 +2,34 @@
 Imports System.IO
 Imports System.Text
 
+''' <summary>
+''' Classe de control:
+''' Cette classe contient toute les méthodes et fonctions nécessaire pour l'execution du programme
+''' </summary>
 Public Class Controller
     Private banque As New Bank()
     Private swBanque As StreamWriter
     Private srBanque As StreamReader
     Private myBanqueSerializer As JsonSerializer
-    Private _loggedAccount As New Account()
-    Private hashedPassword As String = String.Empty
-    Private errorMessage As String = String.Empty
+    Private _loggedCheckingAccount As New CheckingAccount()
+    Private _loggedSavingAccount As New SavingsAccount()
 
 
-    Public Property LoggedAccount() As Account
+    Public Property LoggedCheckingAccount() As CheckingAccount
         Get
-            LoggedAccount = _loggedAccount
+            LoggedCheckingAccount = _loggedCheckingAccount
         End Get
-        Set(value As Account)
-            _loggedAccount = value
+        Set(value As CheckingAccount)
+            _loggedCheckingAccount = value
+        End Set
+    End Property
+
+    Public Property LoggedSavingAccount() As SavingsAccount
+        Get
+            LoggedSavingAccount = _loggedSavingAccount
+        End Get
+        Set(value As SavingsAccount)
+            _loggedSavingAccount = value
         End Set
     End Property
 
@@ -63,7 +75,7 @@ Public Class Controller
         For i As Integer = 0 To banque.BankCheckingAccounts.Item("Checking").Count - 1
             If banque.BankCheckingAccounts.Item("Checking")(i).AccountOwner.CustomerUserName = username And banque.BankCheckingAccounts.Item("Checking")(i).AccountOwner.CustomerPassword = passwordHash(password) Then
                 isFind = True
-                _loggedAccount = banque.BankCheckingAccounts.Item("Checking")(i)
+                _loggedCheckingAccount = banque.BankCheckingAccounts.Item("Checking")(i)
                 Exit For
             Else
                 isFind = False
@@ -77,7 +89,7 @@ Public Class Controller
             For i As Integer = 0 To banque.BankSavingAccounts.Item("Savings").Count - 1
                 If banque.BankSavingAccounts.Item("Savings")(i).AccountOwner.CustomerUserName = username And banque.BankSavingAccounts.Item("Savings")(i).AccountOwner.CustomerPassword = passwordHash(password) Then
                     isFind = True
-                    _loggedAccount = banque.BankSavingAccounts.Item("Savings")(i)
+                    _loggedSavingAccount = banque.BankSavingAccounts.Item("Savings")(i)
                     Exit For
                 Else
                     isFind = False
@@ -103,27 +115,51 @@ Public Class Controller
         End If
     End Function
 
-    'Public Function AccountByNumber(number As Integer)
-    '    banque = ReadFile()
-    '    Dim isFind As Boolean = True
-    '    Dim accountFind As New Account()
-    '    For i As Integer = 0 To banque.BankAccounts.Count
-    '        If banque.BankAccounts.Item("Savings")(i).AccountNumber = number Then
-    '            isFind = True
-    '            accountFind = banque.BankAccounts.Item("Savings")(i)
-    '            Exit For
-    '        Else
-    '            isFind = False
-    '            errorMessage = "Ce compte n'existe pas"
-    '        End If
-    '    Next
 
-    '    If isFind Then
-    '        Return accountFind
-    '    Else
-    '        Return errorMessage
-    '    End If
-    'End Function
+    ''' <summary>
+    ''' Fonction:
+    ''' Cette fonction retourne le compte associé au numéro de compte passé en argument
+    ''' </summary>
+    ''' <param name="number">Un numéro de compte</param>
+    ''' <remarks></remarks>
+    Public Function AccountByNumber(number As Integer)
+        banque = ReadFile()
+        Dim isFind As Boolean = True
+        Dim checkingAccountFind As New Dictionary(Of String, CheckingAccount) From {{"Checking", New CheckingAccount()}}
+        Dim savingAccountFind As New Dictionary(Of String, SavingsAccount) From {{"Savings", New SavingsAccount()}}
+        Dim errorMessage As New Dictionary(Of String, String)
+
+        For i As Integer = 0 To banque.BankSavingAccounts.Item("Savings").Count - 1
+            If banque.BankSavingAccounts.Item("Savings")(i).AccountNumber = number Then
+                isFind = True
+                savingAccountFind.Item("Savings") = banque.BankSavingAccounts.Item("Savings")(i)
+                Exit For
+            Else
+                isFind = False
+            End If
+        Next
+
+        If isFind Then
+            Return savingAccountFind
+        Else
+            For i As Integer = 0 To banque.BankSavingAccounts.Item("Checking").Count - 1
+                If banque.BankSavingAccounts.Item("Checking")(i).AccountNumber = number Then
+                    isFind = True
+                    checkingAccountFind.Item("Checking") = banque.BankCheckingAccounts.Item("Checking")(i)
+                    Exit For
+                Else
+                    isFind = False
+                End If
+            Next
+
+            If isFind Then
+                Return checkingAccountFind
+            Else
+                errorMessage.Add("Error", "Ce compte n'existe pas!")
+                Return errorMessage
+            End If
+        End If
+    End Function
 
     Public Sub createAccount(lastname As String, firstname As String, phoneNumber As String, type As AccountsType)
         banque = ReadFile()
@@ -287,6 +323,88 @@ Public Class Controller
         End If
     End Function
 
+    Public Function UsernameUpdate(accountNumber As Integer, newUsername As String, password As String) As Dictionary(Of Boolean, String)
+        banque = ReadFile()
+        Dim isFind As Boolean = True
+        Dim result As New Dictionary(Of Boolean, String)
+
+        For i As Integer = 0 To banque.BankCheckingAccounts.Item("Checking").Count - 1
+            If banque.BankCheckingAccounts.Item("Checking")(i).AccountNumber = accountNumber And banque.BankCheckingAccounts.Item("Checking")(i).AccountOwner.CustomerPassword = passwordHash(password) Then
+                isFind = True
+                banque.BankCheckingAccounts.Item("Checking")(i).AccountOwner.CustomerUserName = newUsername
+                Exit For
+            Else
+                isFind = False
+            End If
+        Next
+
+        If isFind Then
+            WriteInFile(banque)
+            result.Add(True, "Nom d'utilisateur modifié avec succès")
+            Return result
+        Else
+            For i As Integer = 0 To banque.BankSavingAccounts.Item("Savings").Count - 1
+                If banque.BankSavingAccounts.Item("Savings")(i).AccountNumber = accountNumber And banque.BankSavingAccounts.Item("Savings")(i).AccountOwner.CustomerPassword = passwordHash(password) Then
+                    isFind = True
+                    banque.BankSavingAccounts.Item("Savings")(i).AccountOwner.CustomerUserName = newUsername
+                    Exit For
+                Else
+                    isFind = False
+                End If
+            Next
+
+            If isFind Then
+                WriteInFile(banque)
+                result.Add(True, "Nom d'utilisateur modifié avec succès")
+                Return result
+            Else
+                result.Add(False, "Mot de passe incorrecte!")
+                Return result
+            End If
+        End If
+    End Function
+
+    Public Function PasswordUpdate(accountNumber As Integer, newPassword As String, password As String) As Dictionary(Of Boolean, String)
+        banque = ReadFile()
+        Dim isFind As Boolean = True
+        Dim result As New Dictionary(Of Boolean, String)
+
+        For i As Integer = 0 To banque.BankCheckingAccounts.Item("Checking").Count - 1
+            If banque.BankCheckingAccounts.Item("Checking")(i).AccountNumber = accountNumber And banque.BankCheckingAccounts.Item("Checking")(i).AccountOwner.CustomerPassword = passwordHash(password) Then
+                isFind = True
+                banque.BankCheckingAccounts.Item("Checking")(i).AccountOwner.CustomerPassword = passwordHash(newPassword)
+                Exit For
+            Else
+                isFind = False
+            End If
+        Next
+
+        If isFind Then
+            WriteInFile(banque)
+            result.Add(True, "Mot de passe modifié avec succès")
+            Return result
+        Else
+            For i As Integer = 0 To banque.BankSavingAccounts.Item("Savings").Count - 1
+                If banque.BankSavingAccounts.Item("Savings")(i).AccountNumber = accountNumber And banque.BankSavingAccounts.Item("Savings")(i).AccountOwner.CustomerPassword = passwordHash(password) Then
+                    isFind = True
+                    banque.BankSavingAccounts.Item("Savings")(i).AccountOwner.CustomerPassword = passwordHash(newPassword)
+                    Exit For
+                Else
+                    isFind = False
+                End If
+            Next
+
+            If isFind Then
+                WriteInFile(banque)
+                result.Add(True, "Mot de passe modifié avec succès")
+                Return result
+            Else
+                result.Add(False, "Mot de passe incorrecte!")
+                Return result
+            End If
+        End If
+    End Function
+
     Public Function newAccountID() As Integer
         banque = ReadFile()
         Dim checkingAccount As New CheckingAccount()
@@ -346,7 +464,14 @@ Public Class Controller
 
     End Function
 
+    ''' <summary>
+    ''' Methode de hashage:
+    ''' Cette fonction hash les valeurs passées en argument
+    ''' </summary>
+    ''' <param name="ToHash">La chaîne de caractère à hasher</param>
+    ''' <remarks></remarks>
     Public Function passwordHash(ToHash As String) As String
+        Dim hashedPassword As String = String.Empty
         'Encrytion function
         Dim encode As Byte() = New Byte(ToHash.Length - 1) {}
         encode = Encoding.UTF8.GetBytes(ToHash)

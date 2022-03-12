@@ -4,7 +4,9 @@
     Private _phoneNumber As String
     Private _checkingAccounts As New Dictionary(Of String, List(Of CheckingAccount)) From {{"Checking", New List(Of CheckingAccount)}}
     Private _savingAccounts As New Dictionary(Of String, List(Of SavingsAccount)) From {{"Savings", New List(Of SavingsAccount)}}
-    Private _transactions As New List(Of Transaction)()
+    Private _deposits As New Dictionary(Of String, List(Of Deposit)) From {{"Deposits", New List(Of Deposit)}}
+    Private _withdrawals As New Dictionary(Of String, List(Of Withdrawal)) From {{"Withdrawals", New List(Of Withdrawal)}}
+    Private _transfers As New Dictionary(Of String, List(Of Transfer)) From {{"Transfers", New List(Of Transfer)}}
     Private _admin As New Administrator("Scheph", "YWRtaW5QYXNzV29yZA==") ' Password as adminPassWord
 
 
@@ -63,12 +65,30 @@
         End Set
     End Property
 
-    Public Property BankTransactions() As List(Of Transaction)
+    Public Property BankDeposits() As Dictionary(Of String, List(Of Deposit))
         Get
-            BankTransactions = _transactions
+            BankDeposits = _deposits
         End Get
-        Set(value As List(Of Transaction))
-            _transactions = value
+        Set(value As Dictionary(Of String, List(Of Deposit)))
+            _deposits = value
+        End Set
+    End Property
+
+    Public Property BankWithdrawals() As Dictionary(Of String, List(Of Withdrawal))
+        Get
+            BankWithdrawals = _withdrawals
+        End Get
+        Set(value As Dictionary(Of String, List(Of Withdrawal)))
+            _withdrawals = value
+        End Set
+    End Property
+
+    Public Property BankTranfers() As Dictionary(Of String, List(Of Transfer))
+        Get
+            BankTranfers = _transfers
+        End Get
+        Set(value As Dictionary(Of String, List(Of Transfer)))
+            _transfers = value
         End Set
     End Property
 

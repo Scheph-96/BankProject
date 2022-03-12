@@ -25,7 +25,7 @@ Partial Class AccountEditionScreen
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.UserPasswordDisplayer = New System.Windows.Forms.CheckBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ConfirmUsernameUpdate = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.UserPassword = New System.Windows.Forms.TextBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
@@ -36,7 +36,7 @@ Partial Class AccountEditionScreen
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.OldPasswordDisplayer = New System.Windows.Forms.CheckBox()
         Me.NewPasswordDisplayer = New System.Windows.Forms.CheckBox()
-        Me.ConfirmWithdraw = New System.Windows.Forms.Button()
+        Me.ConfirmPasswordUpdate = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.NewPassword = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -72,7 +72,7 @@ Partial Class AccountEditionScreen
         'Panel4
         '
         Me.Panel4.Controls.Add(Me.UserPasswordDisplayer)
-        Me.Panel4.Controls.Add(Me.Button1)
+        Me.Panel4.Controls.Add(Me.ConfirmUsernameUpdate)
         Me.Panel4.Controls.Add(Me.Label4)
         Me.Panel4.Controls.Add(Me.UserPassword)
         Me.Panel4.Controls.Add(Me.Panel5)
@@ -97,20 +97,20 @@ Partial Class AccountEditionScreen
         Me.UserPasswordDisplayer.Text = "Afficher le mot de passe"
         Me.UserPasswordDisplayer.UseVisualStyleBackColor = True
         '
-        'Button1
+        'ConfirmUsernameUpdate
         '
-        Me.Button1.BackColor = System.Drawing.Color.Maroon
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(0, 244)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(336, 45)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "Confirmer"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.ConfirmUsernameUpdate.BackColor = System.Drawing.Color.Maroon
+        Me.ConfirmUsernameUpdate.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ConfirmUsernameUpdate.FlatAppearance.BorderSize = 0
+        Me.ConfirmUsernameUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ConfirmUsernameUpdate.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.ConfirmUsernameUpdate.ForeColor = System.Drawing.Color.White
+        Me.ConfirmUsernameUpdate.Location = New System.Drawing.Point(0, 244)
+        Me.ConfirmUsernameUpdate.Name = "ConfirmUsernameUpdate"
+        Me.ConfirmUsernameUpdate.Size = New System.Drawing.Size(336, 45)
+        Me.ConfirmUsernameUpdate.TabIndex = 7
+        Me.ConfirmUsernameUpdate.Text = "Confirmer"
+        Me.ConfirmUsernameUpdate.UseVisualStyleBackColor = False
         '
         'Label4
         '
@@ -190,7 +190,7 @@ Partial Class AccountEditionScreen
         '
         Me.Panel1.Controls.Add(Me.OldPasswordDisplayer)
         Me.Panel1.Controls.Add(Me.NewPasswordDisplayer)
-        Me.Panel1.Controls.Add(Me.ConfirmWithdraw)
+        Me.Panel1.Controls.Add(Me.ConfirmPasswordUpdate)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.NewPassword)
         Me.Panel1.Controls.Add(Me.Panel3)
@@ -226,20 +226,20 @@ Partial Class AccountEditionScreen
         Me.NewPasswordDisplayer.Text = "Afficher le mot de passe"
         Me.NewPasswordDisplayer.UseVisualStyleBackColor = True
         '
-        'ConfirmWithdraw
+        'ConfirmPasswordUpdate
         '
-        Me.ConfirmWithdraw.BackColor = System.Drawing.Color.OliveDrab
-        Me.ConfirmWithdraw.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ConfirmWithdraw.FlatAppearance.BorderSize = 0
-        Me.ConfirmWithdraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ConfirmWithdraw.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.ConfirmWithdraw.ForeColor = System.Drawing.Color.White
-        Me.ConfirmWithdraw.Location = New System.Drawing.Point(0, 244)
-        Me.ConfirmWithdraw.Name = "ConfirmWithdraw"
-        Me.ConfirmWithdraw.Size = New System.Drawing.Size(336, 45)
-        Me.ConfirmWithdraw.TabIndex = 7
-        Me.ConfirmWithdraw.Text = "Confirmer"
-        Me.ConfirmWithdraw.UseVisualStyleBackColor = False
+        Me.ConfirmPasswordUpdate.BackColor = System.Drawing.Color.OliveDrab
+        Me.ConfirmPasswordUpdate.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ConfirmPasswordUpdate.FlatAppearance.BorderSize = 0
+        Me.ConfirmPasswordUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ConfirmPasswordUpdate.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.ConfirmPasswordUpdate.ForeColor = System.Drawing.Color.White
+        Me.ConfirmPasswordUpdate.Location = New System.Drawing.Point(0, 244)
+        Me.ConfirmPasswordUpdate.Name = "ConfirmPasswordUpdate"
+        Me.ConfirmPasswordUpdate.Size = New System.Drawing.Size(336, 45)
+        Me.ConfirmPasswordUpdate.TabIndex = 7
+        Me.ConfirmPasswordUpdate.Text = "Confirmer"
+        Me.ConfirmPasswordUpdate.UseVisualStyleBackColor = False
         '
         'Label3
         '
@@ -347,7 +347,7 @@ Partial Class AccountEditionScreen
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents UserPasswordDisplayer As CheckBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents ConfirmUsernameUpdate As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents UserPassword As TextBox
     Friend WithEvents Panel5 As Panel
@@ -358,7 +358,7 @@ Partial Class AccountEditionScreen
     Friend WithEvents Panel1 As Panel
     Friend WithEvents OldPasswordDisplayer As CheckBox
     Friend WithEvents NewPasswordDisplayer As CheckBox
-    Friend WithEvents ConfirmWithdraw As Button
+    Friend WithEvents ConfirmPasswordUpdate As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents NewPassword As TextBox
     Friend WithEvents Panel3 As Panel
