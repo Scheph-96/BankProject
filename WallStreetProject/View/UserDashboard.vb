@@ -13,32 +13,67 @@
 
     Private Sub SoldeSection_Paint(sender As Object, e As MouseEventArgs) Handles SoldeSection.Click
         Dim soldeScreen As New SoldeScreen
-        Parent.Controls.Add(soldeScreen)
-        Me.Dispose()
+        If _CurrentCheckingAccount.AccountCreationDate <> Nothing Then
+            soldeScreen.CurrentCheckingAccount = _CurrentCheckingAccount
+            Parent.Controls.Add(soldeScreen)
+            Me.Dispose()
+        ElseIf _CurrentSavingAccount.AccountCreationDate <> Nothing Then
+            soldeScreen.CurrentSavingAccount = _CurrentSavingAccount
+            Parent.Controls.Add(soldeScreen)
+            Me.Dispose()
+        End If
     End Sub
 
     Private Sub DepositSection_Paint(sender As Object, e As MouseEventArgs) Handles DepositSection.Click
         Dim depositScreen As New DepositeScreen
-        Parent.Controls.Add(depositScreen)
-        Me.Dispose()
+        If _CurrentCheckingAccount.AccountCreationDate <> Nothing Then
+            depositScreen.CurrentCheckingAccount = _CurrentCheckingAccount
+            Parent.Controls.Add(depositScreen)
+            Me.Dispose()
+        ElseIf _CurrentSavingAccount.AccountCreationDate <> Nothing Then
+            depositScreen.CurrentSavingAccount = _CurrentSavingAccount
+            Parent.Controls.Add(depositScreen)
+            Me.Dispose()
+        End If
     End Sub
 
     Private Sub WithdrawalSection_Paint(sender As Object, e As MouseEventArgs) Handles WithdrawalSection.Click
         Dim withdrawScreen As New WithdrawalScreen
-        Parent.Controls.Add(withdrawScreen)
-        Me.Dispose()
+        If _CurrentCheckingAccount.AccountCreationDate <> Nothing Then
+            withdrawScreen.CurrentCheckingAccount = _CurrentCheckingAccount
+            Parent.Controls.Add(withdrawScreen)
+            Me.Dispose()
+        ElseIf _CurrentSavingAccount.AccountCreationDate <> Nothing Then
+            withdrawScreen.CurrentSavingAccount = _CurrentSavingAccount
+            Parent.Controls.Add(withdrawScreen)
+            Me.Dispose()
+        End If
     End Sub
 
     Private Sub TransferSection_Paint(sender As Object, e As MouseEventArgs) Handles TransferSection.Click
         Dim transferScreen As New TransferScreen
-        Parent.Controls.Add(transferScreen)
-        Me.Dispose()
+        If _CurrentCheckingAccount.AccountCreationDate <> Nothing Then
+            transferScreen.CurrentCheckingAccount = _CurrentCheckingAccount
+            Parent.Controls.Add(transferScreen)
+            Me.Dispose()
+        ElseIf _CurrentSavingAccount.AccountCreationDate <> Nothing Then
+            transferScreen.CurrentSavingAccount = _CurrentSavingAccount
+            Parent.Controls.Add(transferScreen)
+            Me.Dispose()
+        End If
     End Sub
 
     Private Sub TransactionSection_Paint(sender As Object, e As MouseEventArgs) Handles TransactionSection.Click
         Dim transactionScreen As New PersonalTransactionScreen
-        Parent.Controls.Add(transactionScreen)
-        Me.Dispose()
+        If _CurrentCheckingAccount.AccountCreationDate <> Nothing Then
+            transactionScreen.CurrentCheckingAccount = _CurrentCheckingAccount
+            Parent.Controls.Add(transactionScreen)
+            Me.Dispose()
+        ElseIf _CurrentSavingAccount.AccountCreationDate <> Nothing Then
+            transactionScreen.CurrentSavingAccount = _CurrentSavingAccount
+            Parent.Controls.Add(transactionScreen)
+            Me.Dispose()
+        End If
     End Sub
 
     Private Sub EditionSection_Paint(sender As Object, e As MouseEventArgs) Handles EditionSection.Click

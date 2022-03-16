@@ -315,7 +315,7 @@ Partial Class AdminDashboard
         '
         'CreateAccountSection
         '
-        Me.CreateAccountSection.BackColor = System.Drawing.Color.GreenYellow
+        Me.CreateAccountSection.BackColor = System.Drawing.Color.YellowGreen
         Me.CreateAccountSection.Controls.Add(Me.Label2)
         Me.CreateAccountSection.Controls.Add(Me.Label1)
         Me.CreateAccountSection.Controls.Add(Me.CreateAccountPic)
@@ -372,7 +372,7 @@ Partial Class AdminDashboard
         '
         'ActiveAccountSection
         '
-        Me.ActiveAccountSection.BackColor = System.Drawing.Color.GreenYellow
+        Me.ActiveAccountSection.BackColor = System.Drawing.Color.YellowGreen
         Me.ActiveAccountSection.Controls.Add(Me.ActiveAccountPic)
         Me.ActiveAccountSection.Controls.Add(Me.FlowLayoutPanel6)
         Me.ActiveAccountSection.Cursor = System.Windows.Forms.Cursors.Hand

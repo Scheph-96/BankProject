@@ -60,9 +60,9 @@ Partial Class SplashScreen
         Me.Label7.ForeColor = System.Drawing.Color.Silver
         Me.Label7.Location = New System.Drawing.Point(12, 354)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(117, 24)
+        Me.Label7.Size = New System.Drawing.Size(124, 24)
         Me.Label7.TabIndex = 7
-        Me.Label7.Text = "All Right Reserved"
+        Me.Label7.Text = "All Rights Reserved"
         '
         'Label6
         '

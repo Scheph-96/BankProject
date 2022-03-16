@@ -25,7 +25,7 @@ Partial Class DepositeScreen
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PasswordDisplayer = New System.Windows.Forms.CheckBox()
-        Me.ConfirmWithdraw = New System.Windows.Forms.Button()
+        Me.ConfirmDeposite = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.UserPassword = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -58,7 +58,7 @@ Partial Class DepositeScreen
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.PasswordDisplayer)
-        Me.Panel1.Controls.Add(Me.ConfirmWithdraw)
+        Me.Panel1.Controls.Add(Me.ConfirmDeposite)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.UserPassword)
         Me.Panel1.Controls.Add(Me.Panel3)
@@ -83,20 +83,20 @@ Partial Class DepositeScreen
         Me.PasswordDisplayer.Text = "Afficher le mot de passe"
         Me.PasswordDisplayer.UseVisualStyleBackColor = True
         '
-        'ConfirmWithdraw
+        'ConfirmDeposite
         '
-        Me.ConfirmWithdraw.BackColor = System.Drawing.Color.DodgerBlue
-        Me.ConfirmWithdraw.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ConfirmWithdraw.FlatAppearance.BorderSize = 0
-        Me.ConfirmWithdraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ConfirmWithdraw.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.ConfirmWithdraw.ForeColor = System.Drawing.Color.White
-        Me.ConfirmWithdraw.Location = New System.Drawing.Point(0, 244)
-        Me.ConfirmWithdraw.Name = "ConfirmWithdraw"
-        Me.ConfirmWithdraw.Size = New System.Drawing.Size(336, 45)
-        Me.ConfirmWithdraw.TabIndex = 7
-        Me.ConfirmWithdraw.Text = "Confirmer"
-        Me.ConfirmWithdraw.UseVisualStyleBackColor = False
+        Me.ConfirmDeposite.BackColor = System.Drawing.Color.DodgerBlue
+        Me.ConfirmDeposite.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ConfirmDeposite.FlatAppearance.BorderSize = 0
+        Me.ConfirmDeposite.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ConfirmDeposite.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.ConfirmDeposite.ForeColor = System.Drawing.Color.White
+        Me.ConfirmDeposite.Location = New System.Drawing.Point(0, 244)
+        Me.ConfirmDeposite.Name = "ConfirmDeposite"
+        Me.ConfirmDeposite.Size = New System.Drawing.Size(336, 45)
+        Me.ConfirmDeposite.TabIndex = 7
+        Me.ConfirmDeposite.Text = "Confirmer"
+        Me.ConfirmDeposite.UseVisualStyleBackColor = False
         '
         'Label3
         '
@@ -201,7 +201,7 @@ Partial Class DepositeScreen
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PasswordDisplayer As CheckBox
-    Friend WithEvents ConfirmWithdraw As Button
+    Friend WithEvents ConfirmDeposite As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents UserPassword As TextBox
     Friend WithEvents Panel3 As Panel

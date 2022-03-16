@@ -13,9 +13,64 @@
                     "CustomerUserName": "Scheph",
                     "CustomerPhoneNumber": "+228 98960193"
                 },
-                "AccountSolde": 0.0,
+                "AccountSolde": 100000000000.0,
                 "AccountType": 0,
-                "AccountTransactions": [],
+                "AccountDeposits": {
+                    "Deposits": [
+                        {
+                            "TransactionMontant": 50000000000.0,
+                            "TransactionDate": "14/03/2022 22:26:39",
+                            "TransactionOwner": 1,
+                            "TransactionType": 0
+                        },
+                        {
+                            "TransactionMontant": 10000000000.0,
+                            "TransactionDate": "14/03/2022 22:43:16",
+                            "TransactionOwner": 1,
+                            "TransactionType": 0
+                        },
+                        {
+                            "TransactionMontant": 20000000000.0,
+                            "TransactionDate": "15/03/2022 15:09:27",
+                            "TransactionOwner": 1,
+                            "TransactionType": 0
+                        },
+                        {
+                            "TransactionMontant": 95000000000.0,
+                            "TransactionDate": "16/03/2022 00:25:28",
+                            "TransactionOwner": 1,
+                            "TransactionType": 0
+                        }
+                    ]
+                },
+                "AccountWithdrawals": {
+                    "Withdrawals": [
+                        {
+                            "TransactionMontant": 10000000000.0,
+                            "TransactionDate": "14/03/2022 22:30:56",
+                            "TransactionOwner": 1,
+                            "TransactionType": 1
+                        }
+                    ]
+                },
+                "AccountTranfers": {
+                    "Transfers": [
+                        {
+                            "TransferTarget": 5,
+                            "TransactionMontant": 1000000000.0,
+                            "TransactionDate": "15/03/2022 23:48:38",
+                            "TransactionOwner": 1,
+                            "TransactionType": 2
+                        },
+                        {
+                            "TransferTarget": 3,
+                            "TransactionMontant": 3000000000.0,
+                            "TransactionDate": "15/03/2022 23:53:23",
+                            "TransactionOwner": 1,
+                            "TransactionType": 2
+                        }
+                    ]
+                },
                 "AccountCreationDate": "09/03/2022 00:44:25",
                 "AccountStatus": 0
             },
@@ -30,7 +85,15 @@
                 },
                 "AccountSolde": 0.0,
                 "AccountType": 0,
-                "AccountTransactions": [],
+                "AccountDeposits": {
+                    "Deposits": []
+                },
+                "AccountWithdrawals": {
+                    "Withdrawals": []
+                },
+                "AccountTranfers": {
+                    "Transfers": []
+                },
                 "AccountCreationDate": "09/03/2022 00:44:56",
                 "AccountStatus": 0
             },
@@ -43,18 +106,49 @@
                     "CustomerUserName": "HenocAMAVI",
                     "CustomerPhoneNumber": "70633792"
                 },
-                "AccountSolde": 0.0,
+                "AccountSolde": 1000000000.0,
                 "AccountType": 0,
-                "AccountTransactions": [],
+                "AccountDeposits": {
+                    "Deposits": []
+                },
+                "AccountWithdrawals": {
+                    "Withdrawals": []
+                },
+                "AccountTranfers": {
+                    "Transfers": []
+                },
                 "AccountCreationDate": "09/03/2022 14:11:19",
                 "AccountStatus": 0
+            },
+            {
+                "AccountNumber": 6,
+                "AccountOwner": {
+                    "CustomerLastName": "SomeLastName",
+                    "CustomerFirstName": "SomeFirstName",
+                    "CustomerPassword": "QDEyMzQ1Njc4OTBA",
+                    "CustomerUserName": "SomeFirstNameSomeLastName",
+                    "CustomerPhoneNumber": "12345676890"
+                },
+                "AccountSolde": 0.0,
+                "AccountType": 0,
+                "AccountDeposits": {
+                    "Deposits": []
+                },
+                "AccountWithdrawals": {
+                    "Withdrawals": []
+                },
+                "AccountTranfers": {
+                    "Transfers": []
+                },
+                "AccountCreationDate": "16/03/2022 02:36:22",
+                "AccountStatus": 2
             }
         ]
     },
     "BankSavingAccounts": {
         "Savings": [
             {
-                "AccountInterest": 2.5,
+                "AccountInterest": 4.0,
                 "AccountNumber": 3,
                 "AccountOwner": {
                     "CustomerLastName": "Azerty",
@@ -63,9 +157,32 @@
                     "CustomerUserName": "QwertzA",
                     "CustomerPhoneNumber": "+228 98764433"
                 },
-                "AccountSolde": 0.0,
+                "AccountSolde": 3000000000.0,
                 "AccountType": 1,
-                "AccountTransactions": [],
+                "AccountDeposits": {
+                    "Deposits": [
+                        {
+                            "TransactionMontant": 1000000.0,
+                            "TransactionDate": "14/03/2022 23:07:07",
+                            "TransactionOwner": 3,
+                            "TransactionType": 0
+                        }
+                    ]
+                },
+                "AccountWithdrawals": {
+                    "Withdrawals": []
+                },
+                "AccountTranfers": {
+                    "Transfers": [
+                        {
+                            "TransferTarget": 4,
+                            "TransactionMontant": 1000000.0,
+                            "TransactionDate": "16/03/2022 00:22:49",
+                            "TransactionOwner": 3,
+                            "TransactionType": 2
+                        }
+                    ]
+                },
                 "AccountCreationDate": "09/03/2022 00:45:26",
                 "AccountStatus": 0
             },
@@ -79,22 +196,90 @@
                     "CustomerUserName": "AzertQ",
                     "CustomerPhoneNumber": "+228 98675433"
                 },
-                "AccountSolde": 0.0,
+                "AccountSolde": 1000000.0,
                 "AccountType": 1,
-                "AccountTransactions": [],
+                "AccountDeposits": {
+                    "Deposits": []
+                },
+                "AccountWithdrawals": {
+                    "Withdrawals": []
+                },
+                "AccountTranfers": {
+                    "Transfers": []
+                },
                 "AccountCreationDate": "09/03/2022 01:01:54",
                 "AccountStatus": 1
             }
         ]
     },
     "BankDeposits": {
-        "Deposits": []
+        "Deposits": [
+            {
+                "TransactionMontant": 50000000000.0,
+                "TransactionDate": "14/03/2022 22:26:39",
+                "TransactionOwner": 1,
+                "TransactionType": 0
+            },
+            {
+                "TransactionMontant": 10000000000.0,
+                "TransactionDate": "14/03/2022 22:43:16",
+                "TransactionOwner": 1,
+                "TransactionType": 0
+            },
+            {
+                "TransactionMontant": 1000000.0,
+                "TransactionDate": "14/03/2022 23:07:07",
+                "TransactionOwner": 3,
+                "TransactionType": 0
+            },
+            {
+                "TransactionMontant": 20000000000.0,
+                "TransactionDate": "15/03/2022 15:09:27",
+                "TransactionOwner": 1,
+                "TransactionType": 0
+            },
+            {
+                "TransactionMontant": 95000000000.0,
+                "TransactionDate": "16/03/2022 00:25:28",
+                "TransactionOwner": 1,
+                "TransactionType": 0
+            }
+        ]
     },
     "BankWithdrawals": {
-        "Withdrawals": []
+        "Withdrawals": [
+            {
+                "TransactionMontant": 10000000000.0,
+                "TransactionDate": "14/03/2022 22:30:56",
+                "TransactionOwner": 1,
+                "TransactionType": 1
+            }
+        ]
     },
     "BankTranfers": {
-        "Transfers": []
+        "Transfers": [
+            {
+                "TransferTarget": 5,
+                "TransactionMontant": 1000000000.0,
+                "TransactionDate": "15/03/2022 23:48:38",
+                "TransactionOwner": 1,
+                "TransactionType": 2
+            },
+            {
+                "TransferTarget": 3,
+                "TransactionMontant": 3000000000.0,
+                "TransactionDate": "15/03/2022 23:53:23",
+                "TransactionOwner": 1,
+                "TransactionType": 2
+            },
+            {
+                "TransferTarget": 4,
+                "TransactionMontant": 1000000.0,
+                "TransactionDate": "16/03/2022 00:22:49",
+                "TransactionOwner": 3,
+                "TransactionType": 2
+            }
+        ]
     },
     "Admin": {
         "AdminName": "Scheph",

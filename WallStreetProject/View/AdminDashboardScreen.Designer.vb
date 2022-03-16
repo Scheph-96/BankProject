@@ -28,6 +28,7 @@ Partial Class AdminDashboardScreen
         Me.Label6 = New System.Windows.Forms.Label()
         Me.LogoutPic = New System.Windows.Forms.PictureBox()
         Me.UserLastName = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.LogoutPic, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -45,6 +46,7 @@ Partial Class AdminDashboardScreen
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.MenuContainer)
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.LogoutPic)
@@ -97,6 +99,18 @@ Partial Class AdminDashboardScreen
         Me.UserLastName.TabIndex = 2
         Me.UserLastName.Text = "OMAR'S BANK"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Arial", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label1.Location = New System.Drawing.Point(0, 39)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(171, 26)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "Admin Interface"
+        '
         'AdminDashboardScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -118,4 +132,5 @@ Partial Class AdminDashboardScreen
     Friend WithEvents Label6 As Label
     Friend WithEvents LogoutPic As PictureBox
     Friend WithEvents UserLastName As Label
+    Friend WithEvents Label1 As Label
 End Class

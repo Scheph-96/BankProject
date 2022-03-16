@@ -3,8 +3,11 @@
 
     Private _target As Integer
 
+    Sub New()
+        MyBase.New()
+    End Sub
 
-    Public Sub New(owner As Account, montant As Double, target As Integer)
+    Public Sub New(owner As Integer, montant As Double, target As Integer)
         MyBase.New(owner, montant, TransactionsType.Transfer)
         _target = target
     End Sub

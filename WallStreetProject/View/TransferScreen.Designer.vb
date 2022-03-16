@@ -28,12 +28,12 @@ Partial Class TransferScreen
         Me.TargetAccountNumber = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.PasswordDisplayer = New System.Windows.Forms.CheckBox()
-        Me.ConfirmWithdraw = New System.Windows.Forms.Button()
+        Me.ConfirmTransfer = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.UserPassword = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.WithdrawAmount = New System.Windows.Forms.TextBox()
+        Me.TransferAmount = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BackPic = New System.Windows.Forms.PictureBox()
@@ -64,12 +64,12 @@ Partial Class TransferScreen
         Me.Panel1.Controls.Add(Me.TargetAccountNumber)
         Me.Panel1.Controls.Add(Me.Panel4)
         Me.Panel1.Controls.Add(Me.PasswordDisplayer)
-        Me.Panel1.Controls.Add(Me.ConfirmWithdraw)
+        Me.Panel1.Controls.Add(Me.ConfirmTransfer)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.UserPassword)
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.WithdrawAmount)
+        Me.Panel1.Controls.Add(Me.TransferAmount)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(211, 0)
@@ -120,20 +120,20 @@ Partial Class TransferScreen
         Me.PasswordDisplayer.Text = "Afficher le mot de passe"
         Me.PasswordDisplayer.UseVisualStyleBackColor = True
         '
-        'ConfirmWithdraw
+        'ConfirmTransfer
         '
-        Me.ConfirmWithdraw.BackColor = System.Drawing.Color.DodgerBlue
-        Me.ConfirmWithdraw.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ConfirmWithdraw.FlatAppearance.BorderSize = 0
-        Me.ConfirmWithdraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ConfirmWithdraw.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.ConfirmWithdraw.ForeColor = System.Drawing.Color.White
-        Me.ConfirmWithdraw.Location = New System.Drawing.Point(0, 271)
-        Me.ConfirmWithdraw.Name = "ConfirmWithdraw"
-        Me.ConfirmWithdraw.Size = New System.Drawing.Size(336, 45)
-        Me.ConfirmWithdraw.TabIndex = 7
-        Me.ConfirmWithdraw.Text = "Confirmer"
-        Me.ConfirmWithdraw.UseVisualStyleBackColor = False
+        Me.ConfirmTransfer.BackColor = System.Drawing.Color.DodgerBlue
+        Me.ConfirmTransfer.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ConfirmTransfer.FlatAppearance.BorderSize = 0
+        Me.ConfirmTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ConfirmTransfer.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.ConfirmTransfer.ForeColor = System.Drawing.Color.White
+        Me.ConfirmTransfer.Location = New System.Drawing.Point(0, 271)
+        Me.ConfirmTransfer.Name = "ConfirmTransfer"
+        Me.ConfirmTransfer.Size = New System.Drawing.Size(336, 45)
+        Me.ConfirmTransfer.TabIndex = 7
+        Me.ConfirmTransfer.Text = "Confirmer"
+        Me.ConfirmTransfer.UseVisualStyleBackColor = False
         '
         'Label3
         '
@@ -178,16 +178,16 @@ Partial Class TransferScreen
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Montant du transfert"
         '
-        'WithdrawAmount
+        'TransferAmount
         '
-        Me.WithdrawAmount.BackColor = System.Drawing.SystemColors.Control
-        Me.WithdrawAmount.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.WithdrawAmount.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.WithdrawAmount.Location = New System.Drawing.Point(0, 77)
-        Me.WithdrawAmount.Margin = New System.Windows.Forms.Padding(0)
-        Me.WithdrawAmount.Name = "WithdrawAmount"
-        Me.WithdrawAmount.Size = New System.Drawing.Size(336, 20)
-        Me.WithdrawAmount.TabIndex = 2
+        Me.TransferAmount.BackColor = System.Drawing.SystemColors.Control
+        Me.TransferAmount.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TransferAmount.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.TransferAmount.Location = New System.Drawing.Point(0, 77)
+        Me.TransferAmount.Margin = New System.Windows.Forms.Padding(0)
+        Me.TransferAmount.Name = "TransferAmount"
+        Me.TransferAmount.Size = New System.Drawing.Size(336, 20)
+        Me.TransferAmount.TabIndex = 2
         '
         'Panel2
         '
@@ -238,12 +238,12 @@ Partial Class TransferScreen
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PasswordDisplayer As CheckBox
-    Friend WithEvents ConfirmWithdraw As Button
+    Friend WithEvents ConfirmTransfer As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents UserPassword As TextBox
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label2 As Label
-    Friend WithEvents WithdrawAmount As TextBox
+    Friend WithEvents TransferAmount As TextBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents BackPic As PictureBox

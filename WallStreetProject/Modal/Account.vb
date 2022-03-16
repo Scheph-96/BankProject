@@ -1,7 +1,7 @@
 ﻿Public Class Account
     Private _number As Integer
     Private _customer As New Customer()
-    Private _solde As Double = 0.0
+    Private _solde As Double
     Private _type As AccountsType
     Private _deposits As New Dictionary(Of String, List(Of Deposit)) From {{"Deposits", New List(Of Deposit)}}
     Private _withdrawals As New Dictionary(Of String, List(Of Withdrawal)) From {{"Withdrawals", New List(Of Withdrawal)}}
@@ -17,6 +17,7 @@
     Public Sub New(number As Integer, customer As Customer, type As AccountsType)
         _number = number
         _customer = customer
+        _solde = 0.0
         _type = type
         _dateCreation = DateTime.Now
         _status = AccountStatus.active
@@ -118,26 +119,113 @@
         End Set
     End Property
 
-    Public Sub Deposit(amount As Double)
-        _solde = amount
-        Dim newDeposit As New Deposit(Me, amount)
+    Public Function Deposit(amount As Double) As Deposit
+
+        'Addition du montant au solde
+        _solde += amount
+
+        'Nouvelle instance de dépôt
+        Dim newDeposit As New Deposit(_number, amount)
+
+        'Ajout de l'objet dépôt àla liste des dépôt
         _deposits.Item("Deposits").Add(newDeposit)
-    End Sub
 
-    Public Sub Withdraw(amount As Double)
-        _solde -= amount
-        Dim newWithdraw As New Withdrawal(Me, amount)
-        _withdrawals.Item("Withdrawals").Add(newWithdraw)
-    End Sub
+        'Retour de l'objet dépôt
+        Return newDeposit
+    End Function
 
-    Public Sub transfer(amount As Double, target As Integer)
-        _solde -= amount
-        Dim controller As New Controller()
-        Dim targetAccount As New Account()
+    Public Function Withdraw(amount As Double)
+        If _solde < amount Then
+            Dim errorMessage As New Dictionary(Of String, String) From {{"Error", "Solde insuffisant"}}
 
-        controller.AccountByNumber(target)
-        targetAccount.AccountSolde = targetAccount.AccountSolde + amount
-        Dim newTransfer As New Transfer(Me, amount, target)
-        _transactions.Add(newTransfer)
-    End Sub
+            Return errorMessage
+        Else
+            'Soustraction du montant du solde
+            _solde -= amount
+
+            'Nouvelle instance de retrait
+            Dim newWithdraw As New Withdrawal(_number, amount)
+
+            'Ajout de l'objet retrait à la liste des retraits
+            _withdrawals.Item("Withdrawals").Add(newWithdraw)
+
+            'Retour de l'objet retrait
+            Return newWithdraw
+        End If
+    End Function
+
+    Public Function Transfer(amount As Double, target As Integer, banque As Bank)
+
+        If _solde < amount Then
+            Dim errorMessage As New Dictionary(Of String, String) From {{"Error", "Solde insuffisant"}}
+
+            Return errorMessage
+        Else
+            Dim controller As New Controller()
+            Dim newObject As Object
+
+            newObject = controller.AccountByNumber(target)
+            'Verfication du type de retour de la fonction AccountByNumber qui retourne un compte en fonction
+            'du numéro passé en argument
+            If newObject.GetType Is GetType(Dictionary(Of String, CheckingAccount)) Then
+
+                ''Instanciation de la classe CheckingAccount
+                'Dim targetAccount As New CheckingAccount()
+
+                ''Affectation du compte retourné à l'instance de CheckingAccount
+                'targetAccount = newObject.Item("Checking")
+
+                'Montant débiter sur le compte
+                _solde -= amount
+
+                'Montant crédité sur le compte cible
+                banque = controller.PerformTransfer(target, amount, banque)
+
+                'Initialisation de l'objet transfert
+                Dim newTransfer As New Transfer(_number, amount, target)
+
+                'Dictionnaire de transfer et de bank
+                Dim transferDict As New Dictionary(Of Transfer, Bank) From {{newTransfer, banque}}
+
+                'Ajout de l'objet transfer à la liste des transferts
+                _transfers.Item("Transfers").Add(newTransfer)
+
+                Return transferDict
+            ElseIf newObject.GetType Is GetType(Dictionary(Of String, SavingsAccount)) Then
+
+                ''Instanciation de la classe SavingsAccount
+                'Dim targetAccount As SavingsAccount
+
+                ''Affectation du compte retourné à l'instance de SavingsAccount
+                'targetAccount = newObject.Item("Savings")
+
+                'Montant débiter sur le compte
+                _solde -= amount
+
+                'Montant crédité sur le compte cible
+                banque = controller.PerformTransfer(target, amount, banque)
+
+                'Initialisation de l'objet transfert
+                Dim newTransfer As New Transfer(_number, amount, target)
+
+                'Dictionnaire de transfer et de bank
+                Dim transferDict As New Dictionary(Of Transfer, Bank) From {{newTransfer, banque}}
+
+                'Ajout de l'objet transfer à la liste des transferts
+                _transfers.Item("Transfers").Add(newTransfer)
+
+                Return transferDict
+            ElseIf newObject.GetType Is GetType(Dictionary(Of String, String)) Then
+                'Message d'erreur
+                Dim errorMsg As New Dictionary(Of String, String)
+
+                'Initialisation du message d'erreur
+                errorMsg = newObject
+
+                'Retour du message d'erreur
+                Return errorMsg
+            End If
+        End If
+
+    End Function
 End Class

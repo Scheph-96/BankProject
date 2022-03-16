@@ -117,7 +117,7 @@ Partial Class ActiveAccountScreen
         '
         'ConfirmActive
         '
-        Me.ConfirmActive.BackColor = System.Drawing.Color.Chartreuse
+        Me.ConfirmActive.BackColor = System.Drawing.Color.YellowGreen
         Me.ConfirmActive.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ConfirmActive.FlatAppearance.BorderSize = 0
         Me.ConfirmActive.FlatStyle = System.Windows.Forms.FlatStyle.Flat

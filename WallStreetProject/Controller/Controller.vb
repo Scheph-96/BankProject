@@ -74,6 +74,10 @@ Public Class Controller
         Dim resultMsg As New Dictionary(Of Boolean, String)
         For i As Integer = 0 To banque.BankCheckingAccounts.Item("Checking").Count - 1
             If banque.BankCheckingAccounts.Item("Checking")(i).AccountOwner.CustomerUserName = username And banque.BankCheckingAccounts.Item("Checking")(i).AccountOwner.CustomerPassword = passwordHash(password) Then
+                If banque.BankCheckingAccounts.Item("Checking")(i).AccountStatus <> AccountStatus.active Then
+                    resultMsg.Add(False, "Ce compte est inactif. Supprimé ou bloqué")
+                    Return resultMsg
+                End If
                 isFind = True
                 _loggedCheckingAccount = banque.BankCheckingAccounts.Item("Checking")(i)
                 Exit For
@@ -88,6 +92,10 @@ Public Class Controller
         Else
             For i As Integer = 0 To banque.BankSavingAccounts.Item("Savings").Count - 1
                 If banque.BankSavingAccounts.Item("Savings")(i).AccountOwner.CustomerUserName = username And banque.BankSavingAccounts.Item("Savings")(i).AccountOwner.CustomerPassword = passwordHash(password) Then
+                    If banque.BankSavingAccounts.Item("Savings")(i).AccountStatus <> AccountStatus.active Then
+                        resultMsg.Add(False, "Ce compte est inactif. Supprimé ou bloqué")
+                        Return resultMsg
+                    End If
                     isFind = True
                     _loggedSavingAccount = banque.BankSavingAccounts.Item("Savings")(i)
                     Exit For
@@ -100,7 +108,7 @@ Public Class Controller
                 resultMsg.Add(True, "Connexion Réussi")
                 Return resultMsg
             Else
-                resultMsg.Add(False, "Echec de connexion. Vérifiez les informations saisis")
+                resultMsg.Add(False, "Echec de connexion. Vérifiez les informations saisis ")
                 Return resultMsg
             End If
         End If
@@ -123,38 +131,63 @@ Public Class Controller
     ''' <param name="number">Un numéro de compte</param>
     ''' <remarks></remarks>
     Public Function AccountByNumber(number As Integer)
+        'Récupération de l'objet banque
         banque = ReadFile()
+
+        'Nouvelles instances
         Dim isFind As Boolean = True
         Dim checkingAccountFind As New Dictionary(Of String, CheckingAccount) From {{"Checking", New CheckingAccount()}}
         Dim savingAccountFind As New Dictionary(Of String, SavingsAccount) From {{"Savings", New SavingsAccount()}}
         Dim errorMessage As New Dictionary(Of String, String)
 
+        'Boucle sur la liste des comptes de type épargne
         For i As Integer = 0 To banque.BankSavingAccounts.Item("Savings").Count - 1
+            'Si le numéro de compte de l'itération courante est égale au numéro passé en paramètre 
             If banque.BankSavingAccounts.Item("Savings")(i).AccountNumber = number Then
+                If banque.BankSavingAccounts.Item("Savings")(i).AccountStatus <> AccountStatus.active Then
+                    errorMessage.Add("Error", "Ce compte est inactif. Bloqué ou supprimé!")
+                    Return errorMessage
+                End If
                 isFind = True
-                savingAccountFind.Item("Savings") = banque.BankSavingAccounts.Item("Savings")(i)
-                Exit For
-            Else
-                isFind = False
+                    'Récupération du compte
+                    savingAccountFind.Item("Savings") = banque.BankSavingAccounts.Item("Savings")(i)
+                    'Sortie de la boucle
+                    Exit For
+                Else
+                    isFind = False
             End If
         Next
 
+        'Si le compte récherché est trouvé
         If isFind Then
+            'Retour du compte
             Return savingAccountFind
+            'Si non
         Else
-            For i As Integer = 0 To banque.BankSavingAccounts.Item("Checking").Count - 1
-                If banque.BankSavingAccounts.Item("Checking")(i).AccountNumber = number Then
+            'Boucle sur la liste des comptes de type courant
+            For i As Integer = 0 To banque.BankCheckingAccounts.Item("Checking").Count - 1
+                'Si le numéro de compte de l'itération courante est égale au numéro passé en paramètre 
+                If banque.BankCheckingAccounts.Item("Checking")(i).AccountNumber = number Then
+                    If banque.BankCheckingAccounts.Item("Checking")(i).AccountStatus <> AccountStatus.active Then
+                        errorMessage.Add("Error", "Ce compte est inactif. Bloqué ou supprimé!")
+                        Return errorMessage
+                    End If
                     isFind = True
+                    'Récupération du compte
                     checkingAccountFind.Item("Checking") = banque.BankCheckingAccounts.Item("Checking")(i)
+                    'Sortie de la boucle
                     Exit For
                 Else
                     isFind = False
                 End If
             Next
 
+            'Si le compte récherché est trouvé
             If isFind Then
                 Return checkingAccountFind
+                'Si non
             Else
+                'Initialisation et retour du message d'erreur
                 errorMessage.Add("Error", "Ce compte n'existe pas!")
                 Return errorMessage
             End If
@@ -222,6 +255,9 @@ Public Class Controller
         If passwordHash(adminPassWord) = banque.Admin.AdminPassword Then
             For i As Integer = 0 To banque.BankSavingAccounts.Item("Savings").Count - 1
                 If accountNumber = banque.BankSavingAccounts.Item("Savings")(i).AccountNumber Then
+                    If banque.BankSavingAccounts.Item("Savings")(i).AccountStatus = AccountStatus.delete Then
+                        Return "Ce compte est supprimé et ne peut être bloqué"
+                    End If
                     banque.BankSavingAccounts.Item("Savings")(i).AccountStatus = AccountStatus.blocked
                     isFind = True
                     Exit For
@@ -236,6 +272,9 @@ Public Class Controller
             Else
                 For i As Integer = 0 To banque.BankCheckingAccounts.Item("Checking").Count - 1
                     If accountNumber = banque.BankCheckingAccounts.Item("Checking")(i).AccountNumber Then
+                        If banque.BankCheckingAccounts.Item("Checking")(i).AccountStatus = AccountStatus.delete Then
+                            Return "Ce compte est supprimé et ne peut être bloqué"
+                        End If
                         banque.BankCheckingAccounts.Item("Checking")(i).AccountStatus = AccountStatus.blocked
                         isFind = True
                         Exit For
@@ -262,6 +301,9 @@ Public Class Controller
         If passwordHash(adminPassword) = banque.Admin.AdminPassword Then
             For i As Integer = 0 To banque.BankSavingAccounts.Item("Savings").Count - 1
                 If accountNumber = banque.BankSavingAccounts.Item("Savings")(i).AccountNumber Then
+                    If banque.BankSavingAccounts.Item("Savings")(i).AccountStatus = AccountStatus.delete Then
+                        Return "Ce compte est supprimé et ne peut être réactivé"
+                    End If
                     banque.BankSavingAccounts.Item("Savings")(i).AccountStatus = AccountStatus.active
                     isFind = True
                     Exit For
@@ -276,6 +318,9 @@ Public Class Controller
             Else
                 For i As Integer = 0 To banque.BankCheckingAccounts.Item("Checking").Count - 1
                     If accountNumber = banque.BankCheckingAccounts.Item("Checking")(i).AccountNumber Then
+                        If banque.BankCheckingAccounts.Item("Checking")(i).AccountStatus = AccountStatus.delete Then
+                            Return "Ce compte est supprimé et ne peut être réactivé"
+                        End If
                         banque.BankCheckingAccounts.Item("Checking")(i).AccountStatus = AccountStatus.active
                         isFind = True
                         Exit For
@@ -303,6 +348,9 @@ Public Class Controller
 
             For i As Integer = 0 To banque.BankSavingAccounts.Item("Savings").Count - 1
                 If accountNumber = banque.BankSavingAccounts.Item("Savings")(i).AccountNumber Then
+                    If banque.BankSavingAccounts.Item("Savings")(i).AccountStatus <> AccountStatus.active Then
+                        Return "Ce compte est inactif. Bloqué ou supprimé!"
+                    End If
                     Dim savingAccount As New SavingsAccount(banque.BankSavingAccounts.Item("Savings")(i), newInterest)
                     banque.BankSavingAccounts.Item("Savings")(i) = savingAccount
                     isFind = True
@@ -405,6 +453,228 @@ Public Class Controller
         End If
     End Function
 
+
+    ''' <summary>
+    ''' Fonction:
+    ''' Cette fonction effectue les transaction de compte
+    ''' </summary>
+    ''' <param name="accountNumber">Numéro du compte qui appele la fonction</param>
+    ''' <param name="type">Type du compte</param>
+    ''' <param name="amount">Montant de la transaction</param>
+    ''' <param name="target">La cible en cas de transfert</param>
+    ''' <remarks></remarks>
+    Public Function Transaction(accountNumber As Integer, type As TransactionsType, amount As Double, password As String, Optional target As Integer = 0)
+        'Récupération de l'objet banque
+        banque = ReadFile()
+        'Instance utile
+        Dim isFind As Boolean = True
+        Dim result As New Dictionary(Of String, String)
+        Dim newObject As Object
+        Dim transferDict As New Dictionary(Of Transfer, Bank)
+
+        'Boucle sur la list des comptes courants de la compte
+        For i As Integer = 0 To banque.BankCheckingAccounts.Item("Checking").Count - 1
+            'Si le numéro de compte de l'itération courante est égale au numéro passé en paramètre
+            If banque.BankCheckingAccounts.Item("Checking")(i).AccountNumber = accountNumber And banque.BankCheckingAccounts.Item("Checking")(i).AccountOwner.CustomerPassword = passwordHash(password) Then
+                isFind = True
+                'Si un dépôt doit être effectué
+                If type = TransactionsType.Deposit Then
+                    'Nouvelle instance dépôt
+                    Dim deposit As Deposit
+                    'Réalisation du dépôt
+                    deposit = banque.BankCheckingAccounts.Item("Checking")(i).Deposit(amount)
+                    'Ajout du dépôt à la liste des dépôt de la banque
+                    banque.BankDeposits.Item("Deposits").Add(deposit)
+                    'Sortie de la boucle
+                    Exit For
+                    'Si un retrait doit être effectué
+                ElseIf type = TransactionsType.Withdrawal Then
+
+                    'Réalisation du retrait
+                    newObject = banque.BankCheckingAccounts.Item("Checking")(i).Withdraw(amount)
+
+                    'Verification du type de retour
+                    If newObject.GetType Is GetType(Withdrawal) Then
+
+                        'Nouvelle instance retrait
+                        Dim withdrawal As Withdrawal
+
+                        'Ajout du retrait à la liste des retrait de la banque
+                        withdrawal = newObject
+                        banque.BankWithdrawals.Item("Withdrawals").Add(withdrawal)
+
+                        'Sortie de la boucle
+                        Exit For
+                    ElseIf newObject.GetType Is GetType(Dictionary(Of String, String)) Then
+                        result = newObject
+                        Return result
+                    End If
+                    'Si un transfert doit être effectué
+                ElseIf type = TransactionsType.Transfer Then
+                    'Réalisation du transfer
+                    newObject = banque.BankCheckingAccounts.Item("Checking")(i).Transfer(amount, target, banque)
+                    'Verification du type de retour
+                    If newObject.GetType Is GetType(Dictionary(Of Transfer, Bank)) Then
+
+                        'Nouvelle instance transfer
+                        Dim transfer As Transfer
+
+                        transferDict = newObject
+
+                        'Ajout du transfert à la liste des transferts de la banque
+                        transfer = transferDict.Keys(0)
+                        banque = transferDict.Values(0)
+                        banque.BankTranfers.Item("Transfers").Add(transfer)
+                        Exit For
+                    ElseIf newObject.GetType Is GetType(Dictionary(Of String, String)) Then
+                        result = newObject
+                        Return result
+                    End If
+
+                End If
+            Else
+                isFind = False
+            End If
+        Next
+
+        If isFind Then
+            result.Add("Done", "Task performed")
+            WriteInFile(banque)
+            Return result
+        Else
+            'Boucle sur la list des comptes épargne de la compte
+            For i As Integer = 0 To banque.BankSavingAccounts.Item("Savings").Count - 1
+                'Si le numéro de compte de l'itération courante est égale au numéro passé en paramètre
+                If banque.BankSavingAccounts.Item("Savings")(i).AccountNumber = accountNumber And banque.BankSavingAccounts.Item("Savings")(i).AccountOwner.CustomerPassword = passwordHash(password) Then
+                    isFind = True
+                    'Si un dépôt doit être effectué
+                    If type = TransactionsType.Deposit Then
+                        'Nouvelle instance dépôt
+                        Dim deposit As Deposit
+                        'Réalisation du dépôt
+                        deposit = banque.BankSavingAccounts.Item("Savings")(i).Deposit(amount)
+                        'Ajout du dépôt à la liste des dépôt de la banque
+                        banque.BankDeposits.Item("Deposits").Add(deposit)
+                        'Sortie de la boucle
+                        Exit For
+
+                        'Si un retrait doit être effectué
+                    ElseIf type = TransactionsType.Withdrawal Then
+
+                        'Réalisation du retrait
+                        newObject = banque.BankSavingAccounts.Item("Savings")(i).Withdraw(amount)
+
+                        'Verification du type de retour
+                        If newObject.GetType Is GetType(Withdrawal) Then
+                            'Nouvelle instance retrait
+                            Dim withdrawal As Withdrawal
+
+                            'Ajout du retrait à la liste des retrait de la banque
+                            withdrawal = newObject
+                            banque.BankWithdrawals.Item("Withdrawals").Add(withdrawal)
+
+                            'Sortie de la boucle
+                            Exit For
+                        ElseIf newObject.GetType Is GetType(Dictionary(Of String, String)) Then
+                            result = newObject
+                            Return result
+                        End If
+
+                        'Si un transfert doit être effectué
+                    ElseIf type = TransactionsType.Transfer Then
+
+                        'Réalisation du transfer
+                        newObject = banque.BankSavingAccounts.Item("Savings")(i).Transfer(amount, target, banque)
+
+                        'Verification du type de retour
+                        If newObject.GetType Is GetType(Dictionary(Of Transfer, Bank)) Then
+
+                            'Nouvelle instance transfer
+                            Dim transfer As Transfer
+
+                            transferDict = newObject
+
+                            'Ajout du transfert à la liste des transferts de la banque
+                            transfer = transferDict.Keys(0)
+                            banque = transferDict.Values(0)
+                            banque.BankTranfers.Item("Transfers").Add(transfer)
+                            Exit For
+                        ElseIf newObject.GetType Is GetType(Dictionary(Of String, String)) Then
+                            result = newObject
+                            Return result
+                        End If
+
+                    End If
+                Else
+                    isFind = False
+                End If
+            Next
+
+
+            If isFind Then
+                result.Add("Done", "Task performed")
+                WriteInFile(banque)
+                Return result
+            Else
+                result.Add("ErrorPassword", "Mot de passe incorrecte!")
+                Return result
+            End If
+        End If
+    End Function
+
+    ''' <summary>
+    ''' Methode d'addition:
+    ''' Cette procédure ajoute le montant d'un transfert au solde de la cible
+    ''' </summary>
+    ''' <param name="target">La cible de la transaction</param>
+    ''' <param name="amount">Le montant de la transaction</param>
+    ''' <remarks></remarks>
+    Public Function PerformTransfer(target As Integer, amount As Double, banque As Bank)
+        'Déclaration de variable
+        Dim isFind As Boolean = True
+
+        'Boucle sur la liste des comptes épargne
+        For i As Integer = 0 To banque.BankSavingAccounts.Item("Savings").Count - 1
+            Debug.WriteLine("Start loop")
+            If banque.BankSavingAccounts.Item("Savings")(i).AccountNumber = target Then
+                Debug.WriteLine("Acount found")
+                isFind = True
+
+                'Ajout du montant
+                banque.BankSavingAccounts.Item("Savings")(i).AccountSolde += amount
+                Exit For
+            Else
+                isFind = False
+            End If
+        Next
+
+        If isFind Then
+            Debug.WriteLine("Account find in savings block")
+            'Retour de l'objet banque
+            Return banque
+        Else
+            Debug.WriteLine("In else Checking block")
+            'Boucle sur la liste des compte courant
+            For i As Integer = 0 To banque.BankCheckingAccounts.Item("Checking").Count - 1
+                Debug.WriteLine("Start loop")
+                If banque.BankCheckingAccounts.Item("Checking")(i).AccountNumber = target Then
+                    Debug.WriteLine("Acount found")
+                    isFind = True
+
+                    'Ajout du montant
+                    banque.BankCheckingAccounts.Item("Checking")(i).AccountSolde += amount
+                    Exit For
+                End If
+            Next
+
+            If isFind Then
+                Debug.WriteLine("Account find in checking block")
+                'Retour de l'objet banque
+                Return banque
+            End If
+        End If
+    End Function
+
     Public Function newAccountID() As Integer
         banque = ReadFile()
         Dim checkingAccount As New CheckingAccount()
@@ -426,7 +696,7 @@ Public Class Controller
             checkingAccount = banque.BankCheckingAccounts.Item("Checking")(banque.BankCheckingAccounts.Item("Checking").OfType(Of CheckingAccount).Count - 1)
             If savingsAccount.AccountNumber > checkingAccount.AccountNumber Then
                 Return savingsAccount.AccountNumber + 1
-            ElseIf savingsAccount.AccountNumber < checkingAccount.AccountNumber Then
+            ElseIf savingsAccount.AccountNumber <checkingAccount.AccountNumber Then
                 Return checkingAccount.AccountNumber + 1
             End If
         End If
@@ -462,6 +732,25 @@ Public Class Controller
 
         Return Accounts
 
+    End Function
+
+
+    Public Function Deposits() As List(Of Deposit)
+        banque = ReadFile()
+
+        Return banque.BankDeposits.Item("Deposits")
+    End Function
+
+    Public Function Withdrawals() As List(Of Withdrawal)
+        banque = ReadFile()
+
+        Return banque.BankWithdrawals.Item("Withdrawals")
+    End Function
+
+    Public Function Transfers() As List(Of Transfer)
+        banque = ReadFile()
+
+        Return banque.BankTranfers.Item("Transfers")
     End Function
 
     ''' <summary>
