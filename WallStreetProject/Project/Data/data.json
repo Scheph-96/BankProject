@@ -102,17 +102,31 @@
                 "AccountOwner": {
                     "CustomerLastName": "AMAVI",
                     "CustomerFirstName": "Henoc",
-                    "CustomerPassword": "QDEyMzQ1Njc4OTBA",
-                    "CustomerUserName": "HenocAMAVI",
+                    "CustomerPassword": "QDA5ODc2NTQzMjFA",
+                    "CustomerUserName": "Amavi Omar",
                     "CustomerPhoneNumber": "70633792"
                 },
-                "AccountSolde": 1000000000.0,
+                "AccountSolde": 1001000002.0,
                 "AccountType": 0,
                 "AccountDeposits": {
-                    "Deposits": []
+                    "Deposits": [
+                        {
+                            "TransactionMontant": 1000000.0,
+                            "TransactionDate": "16/03/2022 12:41:39",
+                            "TransactionOwner": 5,
+                            "TransactionType": 0
+                        }
+                    ]
                 },
                 "AccountWithdrawals": {
-                    "Withdrawals": []
+                    "Withdrawals": [
+                        {
+                            "TransactionMontant": -2.0,
+                            "TransactionDate": "16/03/2022 12:42:30",
+                            "TransactionOwner": 5,
+                            "TransactionType": 1
+                        }
+                    ]
                 },
                 "AccountTranfers": {
                     "Transfers": []
@@ -142,6 +156,29 @@
                 },
                 "AccountCreationDate": "16/03/2022 02:36:22",
                 "AccountStatus": 2
+            },
+            {
+                "AccountNumber": 7,
+                "AccountOwner": {
+                    "CustomerLastName": "BESSAN",
+                    "CustomerFirstName": "Pauline",
+                    "CustomerPassword": "QDEyMzQ1Njc4OTBA",
+                    "CustomerUserName": "PaulineBESSAN",
+                    "CustomerPhoneNumber": "234567890"
+                },
+                "AccountSolde": 0.0,
+                "AccountType": 0,
+                "AccountDeposits": {
+                    "Deposits": []
+                },
+                "AccountWithdrawals": {
+                    "Withdrawals": []
+                },
+                "AccountTranfers": {
+                    "Transfers": []
+                },
+                "AccountCreationDate": "16/03/2022 12:38:21",
+                "AccountStatus": 0
             }
         ]
     },
@@ -243,6 +280,12 @@
                 "TransactionDate": "16/03/2022 00:25:28",
                 "TransactionOwner": 1,
                 "TransactionType": 0
+            },
+            {
+                "TransactionMontant": 1000000.0,
+                "TransactionDate": "16/03/2022 12:41:39",
+                "TransactionOwner": 5,
+                "TransactionType": 0
             }
         ]
     },
@@ -252,6 +295,12 @@
                 "TransactionMontant": 10000000000.0,
                 "TransactionDate": "14/03/2022 22:30:56",
                 "TransactionOwner": 1,
+                "TransactionType": 1
+            },
+            {
+                "TransactionMontant": -2.0,
+                "TransactionDate": "16/03/2022 12:42:30",
+                "TransactionOwner": 5,
                 "TransactionType": 1
             }
         ]
